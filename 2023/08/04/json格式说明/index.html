@@ -17,22 +17,22 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"zzjxing.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="本文基于Go官方文档和理解 Go 中的 JSON整理  介绍JSON 是一种简单的数据交换方式，常用于前后端数据之间的通信，json.org为json的定义提供了标准，Go在json package提供了对json的支持。下面是一些术语说明：   Go struct –&gt; JSON data &#x3D; 序列化 或 编码 JSON data –&gt; Go struct &#x3D; 反">
 <meta property="og:type" content="article">
 <meta property="og:title" content="go 中json格式说明">
-<meta property="og:url" content="http://example.com/2023/08/04/json%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/index.html">
+<meta property="og:url" content="https://zzjxing.github.io/2023/08/04/json%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/index.html">
 <meta property="og:site_name" content="Hexo-zjx-blog">
 <meta property="og:description" content="本文基于Go官方文档和理解 Go 中的 JSON整理  介绍JSON 是一种简单的数据交换方式，常用于前后端数据之间的通信，json.org为json的定义提供了标准，Go在json package提供了对json的支持。下面是一些术语说明：   Go struct –&gt; JSON data &#x3D; 序列化 或 编码 JSON data –&gt; Go struct &#x3D; 反">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-04T06:52:26.277Z">
-<meta property="article:modified_time" content="2023-08-04T06:52:26.277Z">
+<meta property="article:modified_time" content="2023-08-07T04:07:33.637Z">
 <meta property="article:author" content="zhangjiaxing">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2023/08/04/json%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/">
+<link rel="canonical" href="https://zzjxing.github.io/2023/08/04/json%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/">
 
 
 <script id="page-configurations">
@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/04/json%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/">
+    <link itemprop="mainEntityOfPage" href="https://zzjxing.github.io/2023/08/04/json%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -175,6 +175,13 @@
 
               <time title="创建时间：2023-08-04 14:52:26" itemprop="dateCreated datePublished" datetime="2023-08-04T14:52:26+08:00">2023-08-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-07 12:07:33" itemprop="dateModified" datetime="2023-08-07T12:07:33+08:00">2023-08-07</time>
+              </span>
 
           
 
@@ -232,10 +239,10 @@
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Person <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name             <span class="type">string</span> <span class="string">`json:&quot;name,omitempty&quot;`</span> </span><br><span class="line">    Age              <span class="type">int</span>    <span class="string">`json:&quot;age,number,min=18,max=99&quot;`</span></span><br><span class="line">    Email            <span class="type">string</span> <span class="string">`json:&quot;email,regexp=^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]&#123;2,&#125;$&quot;`</span></span><br><span class="line">    PhoneNumber      <span class="type">string</span> <span class="string">`json:&quot;phone_number,number,len=11&quot;`</span></span><br><span class="line">    Height           <span class="type">float64</span> <span class="string">`json:&quot;height,number,min=100,max=200&quot;`</span></span><br><span class="line">    Weight           <span class="type">float64</span> <span class="string">`json:&quot;weight,number,min=30,max=200&quot;`</span></span><br><span class="line">    IsMarried        <span class="type">bool</span>   <span class="string">`json:&quot;is_married&quot;`</span></span><br><span class="line">    Address          <span class="type">string</span> <span class="string">`json:&quot;address,omitempty&quot;`</span></span><br><span class="line">    PreferredColor   <span class="type">string</span> <span class="string">`json:&quot;preferred_color,enum=red,blue,green&quot;`</span></span><br><span class="line">    BankCardPwd      <span class="type">string</span> <span class="string">`json:&quot;-&quot;`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Person <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name           <span class="type">string</span> <span class="string">`json:&quot;name&quot; validate:&quot;omitempty&quot;`</span></span><br><span class="line">    Age            <span class="type">int</span>    <span class="string">`json:&quot;age&quot; validate:&quot;number,min=18,max=99&quot;`</span></span><br><span class="line">    Email          <span class="type">string</span> <span class="string">`json:&quot;email&quot; validate:&quot;regexp=^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]&#123;2,&#125;$&quot;`</span></span><br><span class="line">    PhoneNumber    <span class="type">string</span> <span class="string">`json:&quot;phone_number&quot; validate:&quot;number,len=11&quot;`</span></span><br><span class="line">    Height         <span class="type">float64</span> <span class="string">`json:&quot;height&quot; validate:&quot;min=100,max=200&quot;`</span></span><br><span class="line">    Weight         <span class="type">float64</span> <span class="string">`json:&quot;weight&quot; validate:&quot;min=30,max=200&quot;`</span></span><br><span class="line">    IsMarried      <span class="type">bool</span>   <span class="string">`json:&quot;is_married&quot;`</span></span><br><span class="line">    Address        <span class="type">string</span> <span class="string">`json:&quot;address&quot; validate:&quot;omitempty&quot; `</span></span><br><span class="line">    PreferredColor <span class="type">string</span> <span class="string">`json:&quot;preferred_color&quot; validate:&quot;oneof=red blue green&quot;`</span></span><br><span class="line">    BankCardPwd    <span class="type">string</span> <span class="string">`json:&quot;-&quot;`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="解码任意数据"><a href="#解码任意数据" class="headerlink" title="解码任意数据"></a>解码任意数据</h3><p>默认的 JSON 只支持以下几种 Go 类型： </p>
 <ul>
-<li>bool for JSON booleans</li>
-<li>float64 for JSON numbers</li>
-<li>string for JSON strings</li>
-<li>nil for JSON null</li>
+<li>bool &lt;–&gt; JSON booleans</li>
+<li>float64 &lt;–&gt; JSON numbers</li>
+<li>string &lt;–&gt; JSON strings</li>
+<li>nil &lt;–&gt; JSON null</li>
 </ul>
 <p>对于未知格式的数据，json包可以使用 map[string]interface{} 和 []interface{} 来存储任意的 JSON 对象和数组。<br>假设以下 JSON 数据，存储在变量 b 中： </p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b := []<span class="type">byte</span>(<span class="string">`&#123;&quot;Name&quot;:&quot;Wednesday&quot;,&quot;Age&quot;:6,&quot;Parents&quot;:[&quot;Gomez&quot;,&quot;Morticia&quot;]&#125;`</span>)</span><br></pre></td></tr></table></figure>
