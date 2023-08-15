@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"zzjxing.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="查找文件find12345678910111213141516# 查找指定文件名的文件：find &#x2F;path&#x2F;to&#x2F;search -name &quot;filename&quot;# 查找指定类型的文件：find &#x2F;path&#x2F;to&#x2F;search -type f  # 查找普通文件find &#x2F;path&#x2F;to&#x2F;search -type d  # 查找目录find &#x2F;path&#x2F;to&#x2F;search -">
+  <meta name="description" content="查找文件find12345678910111213141516# 查找指定文件名的文件：find &#x2F;path&#x2F;to&#x2F;search -name &quot;filename&quot;# 查找指定类型的文件：find &#x2F;path&#x2F;to&#x2F;search -type f  # 查找普通文件find &#x2F;path&#x2F;to&#x2F;search -type d  # 查找目录find &#x2F;path&#x2F;to&#x2F;search">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux 常用命令">
 <meta property="og:url" content="https://zzjxing.github.io/2023/08/04/linux%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo-zjx-blog">
-<meta property="og:description" content="查找文件find12345678910111213141516# 查找指定文件名的文件：find &#x2F;path&#x2F;to&#x2F;search -name &quot;filename&quot;# 查找指定类型的文件：find &#x2F;path&#x2F;to&#x2F;search -type f  # 查找普通文件find &#x2F;path&#x2F;to&#x2F;search -type d  # 查找目录find &#x2F;path&#x2F;to&#x2F;search -">
+<meta property="og:description" content="查找文件find12345678910111213141516# 查找指定文件名的文件：find &#x2F;path&#x2F;to&#x2F;search -name &quot;filename&quot;# 查找指定类型的文件：find &#x2F;path&#x2F;to&#x2F;search -type f  # 查找普通文件find &#x2F;path&#x2F;to&#x2F;search -type d  # 查找目录find &#x2F;path&#x2F;to&#x2F;search">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-04T07:15:31.972Z">
-<meta property="article:modified_time" content="2023-08-15T08:15:40.235Z">
+<meta property="article:modified_time" content="2023-08-15T08:17:20.720Z">
 <meta property="article:author" content="zhangjiaxing">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-15 16:15:40" itemprop="dateModified" datetime="2023-08-15T16:15:40+08:00">2023-08-15</time>
+                <time title="修改时间：2023-08-15 16:17:20" itemprop="dateModified" datetime="2023-08-15T16:17:20+08:00">2023-08-15</time>
               </span>
 
           
@@ -195,6 +195,7 @@
 
       
         <span id="more"></span>
+
 <h2 id="查找文件find"><a href="#查找文件find" class="headerlink" title="查找文件find"></a>查找文件<code>find</code></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找指定文件名的文件：</span></span><br><span class="line">find /path/to/search -name <span class="string">&quot;filename&quot;</span></span><br><span class="line"><span class="comment"># 查找指定类型的文件：</span></span><br><span class="line">find /path/to/search -<span class="built_in">type</span> f  <span class="comment"># 查找普通文件</span></span><br><span class="line">find /path/to/search -<span class="built_in">type</span> d  <span class="comment"># 查找目录</span></span><br><span class="line">find /path/to/search -<span class="built_in">type</span> l  <span class="comment"># 查找符号链接</span></span><br><span class="line"><span class="comment"># 查找文件名包含特定字符串的文件：</span></span><br><span class="line">find /path/to/search -name <span class="string">&quot;*substring*&quot;</span></span><br><span class="line"><span class="comment"># 按照文件大小进行查找：</span></span><br><span class="line">find /path/to/search -size +10M  <span class="comment"># 查找大小大于10MB的文件</span></span><br><span class="line">find /path/to/search -size -5M   <span class="comment"># 查找大小小于5MB的文件</span></span><br><span class="line"><span class="comment"># 按照文件权限进行查找：</span></span><br><span class="line">find /path/to/search -perm 644  <span class="comment"># 查找文件权限为644的文件</span></span><br><span class="line"><span class="comment"># 在特定时间范围内查找文件：</span></span><br><span class="line">find /path/to/search -mtime +7  <span class="comment"># 查找修改时间在7天之前的文件</span></span><br><span class="line">find /path/to/search -mtime -3  <span class="comment"># 查找修改时间在3天之内的文件</span></span><br></pre></td></tr></table></figure>
 <h2 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a><code>whereis</code></h2><p><code>whereis</code> 是一个 Linux 命令，用于在特定的目录中搜索可执行文件、源代码文件以及帮助文件。它比较适合用于查找系统命令或系统软件的位置。<br>基本语法：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis [options] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
