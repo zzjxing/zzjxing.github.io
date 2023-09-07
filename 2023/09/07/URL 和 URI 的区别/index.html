@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"zzjxing.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"zzjxing.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="一、URI-统一资源标识符URI 全称 Uniform Resource Identifier,指的是统一资源标识符，用来标识唯一的资源。Web 上可用的每种资源-HTML 文档、图像、视频片段、程序等都由一个通用资源标识符(即 URI)进行定位。URI 一般由三部分组成：  1.访问资源的命名机制 2.存放资源的主机名 3.资源自身的名称，由路径表示  看个例子：http:&#x2F;&#x2F;www.xxx.c">
@@ -197,7 +197,7 @@
 <li>3.资源自身的名称，由路径表示</li>
 </ul>
 <p>看个例子：<a target="_blank" rel="noopener" href="http://www.xxx.com/html/html4">http://www.xxx.com/html/html4</a><br>这个 URi 是这样的：这是一个通过 HTTP 协议访问的资源，位于<a target="_blank" rel="noopener" href="http://www.xxx.com上,通过路径"/html/html4%22%E8%AE%BF%E9%97%AE%E3%80%82">www.xxx.com上，通过路径&quot;/html/html4&quot;访问。</a><br>有的 URI 指向一个资源的内部。这种 URi 以”#”结束，并跟着一个 anchor 标识符（称为片段标识符）。例如，下面是一个指向 section_2 的 URI：<a target="_blank" rel="noopener" href="http://somesite.com/html/top.htm#section_2">http://somesite.com/html/top.htm#section_2</a></p>
-<h4 id="1-1-绝对-URI"><a href="#1-1-绝对-URI" class="headerlink" title="1.1 绝对 URI"></a>1.1 绝对 URI</h4><p>URI 有绝对和相对之分，绝对的 URI 指以 scheme（后面跟着冒号）开头的 URI。前面提到的<a target="_blank" rel="noopener" href="http://www.cnn.com就是绝对的/">http://www.cnn.com就是绝对的</a> URI 的一个例子，其它的例子还有mailto:<a href="mailto:&#106;&#x65;&#x66;&#x66;&#x40;&#106;&#x61;&#x76;&#x61;&#x6a;&#x65;&#x66;&#102;&#46;&#99;&#x6f;&#109;">&#106;&#x65;&#x66;&#x66;&#x40;&#106;&#x61;&#x76;&#x61;&#x6a;&#x65;&#x66;&#102;&#46;&#99;&#x6f;&#109;</a>、news:comp.lang.java.help和xyz:&#x2F;&#x2F;whatever。你可以把绝对的 URI 看作是以某种方式引用某种资源，而这种方式对标识符出现的环境没有依赖。如果使用文件系统作类比，绝对的 URI 类似于从根目录开始的某个文件的径。</p>
+<h4 id="1-1-绝对-URI"><a href="#1-1-绝对-URI" class="headerlink" title="1.1 绝对 URI"></a>1.1 绝对 URI</h4><p>URI 有绝对和相对之分，绝对的 URI 指以 scheme（后面跟着冒号）开头的 URI。前面提到的<a target="_blank" rel="noopener" href="http://www.cnn.com就是绝对的/">http://www.cnn.com就是绝对的</a> URI 的一个例子，其它的例子还有mailto:<a href="mailto:&#106;&#x65;&#x66;&#x66;&#x40;&#106;&#97;&#118;&#x61;&#106;&#x65;&#x66;&#x66;&#x2e;&#99;&#x6f;&#109;">&#106;&#x65;&#x66;&#x66;&#x40;&#106;&#97;&#118;&#x61;&#106;&#x65;&#x66;&#x66;&#x2e;&#99;&#x6f;&#109;</a>、news:comp.lang.java.help和xyz:&#x2F;&#x2F;whatever。你可以把绝对的 URI 看作是以某种方式引用某种资源，而这种方式对标识符出现的环境没有依赖。如果使用文件系统作类比，绝对的 URI 类似于从根目录开始的某个文件的径。</p>
 <h4 id="1-2-相对-URI"><a href="#1-2-相对-URI" class="headerlink" title="1.2 相对 URI"></a>1.2 相对 URI</h4><p>相对 URI 不包含任何命名规范信息。它的路径通常指同一台机器上的资源。相对 URI 可能含有相对路径（如，”..”表示上一层路径），还可能包含片段标识符。比如看下面的例子：</p>
 <ul>
 <li>相对 URI：<ul>
@@ -231,7 +231,7 @@
 <li>路径（path）：指明服务器上某资源的位置。与端口一样，路径并非总是需要的。可选的。</li>
 </ol>
 <p>URL 地址格式排列为：schema:&#x2F;&#x2F;host:port&#x2F;path<br>必须注意：www 上的服务器都是区分大小写的，所以千万要注意正确的 URL 大小写表达形式。</p>
-<h3 id="三、URN-统一资源名称"><a href="#三、URN-统一资源名称" class="headerlink" title="三、URN-统一资源名称"></a>三、URN-统一资源名称</h3><p>URN,全称 Uniform Resource Name,指的是统一资源命名,是通过名字来标识资源。比如mailto:<a href="mailto:&#106;&#x61;&#118;&#97;&#45;&#110;&#x65;&#116;&#x40;&#106;&#97;&#118;&#x61;&#46;&#x73;&#117;&#x6e;&#46;&#x63;&#x6f;&#x6d;">&#106;&#x61;&#118;&#97;&#45;&#110;&#x65;&#116;&#x40;&#106;&#97;&#118;&#x61;&#46;&#x73;&#117;&#x6e;&#46;&#x63;&#x6f;&#x6d;</a><br>URN 是 URL 的一种更新形式，统一资源名称(URN, Uniform Resource Name)不依赖于位置，并且有可能减少失效连接的个数。</p>
+<h3 id="三、URN-统一资源名称"><a href="#三、URN-统一资源名称" class="headerlink" title="三、URN-统一资源名称"></a>三、URN-统一资源名称</h3><p>URN,全称 Uniform Resource Name,指的是统一资源命名,是通过名字来标识资源。比如mailto:<a href="mailto:&#106;&#97;&#118;&#97;&#45;&#x6e;&#101;&#x74;&#x40;&#x6a;&#97;&#118;&#97;&#46;&#115;&#117;&#110;&#x2e;&#x63;&#111;&#109;">&#106;&#97;&#118;&#97;&#45;&#x6e;&#101;&#x74;&#x40;&#x6a;&#97;&#118;&#97;&#46;&#115;&#117;&#110;&#x2e;&#x63;&#111;&#109;</a><br>URN 是 URL 的一种更新形式，统一资源名称(URN, Uniform Resource Name)不依赖于位置，并且有可能减少失效连接的个数。</p>
 <h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>URI: Uniform Resource Identifier 指的是统一资源标识符<br>URL: Uniform Resource Location 指的是统一资源定位符<br>URN: Universal Resource Name 指的是统一资源名称<br>URI 指的是统一资源标识符，用唯一的标识来确定一个资源，它是一种抽象的定义，也就是说，不管使用什么方法来定义，只要能唯一的标识一个资源，就可以称为 URI。它是以某种统一的(标准化的)方式标识资源的简单字符串。<br>URL 和 URN 是 URI 的子集，URL 可以理解为使用地址来标识资源，URN 可以理解为使用名称来标识资源。<br>Web 上地址的基本形式是 URI，它代表统一资源标识符,有两种形式</p>
 <ul>
 <li>URL:目前 URI 的最普遍的形式就是无处不在的 URL 或统一资源定位器</li>
@@ -362,8 +362,11 @@
   </span>
   <span class="author" itemprop="copyrightHolder">zhangjiaxing</span>
 </div>
+
+<!--
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
+-->
 
         
 
