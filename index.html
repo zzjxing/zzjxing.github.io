@@ -170,7 +170,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-09-07 16:40:44 / 修改时间：16:41:51" itemprop="dateCreated datePublished" datetime="2023-09-07T16:40:44+08:00">2023-09-07</time>
+              <time title="创建时间：2023-09-07 16:40:44 / 修改时间：16:56:21" itemprop="dateCreated datePublished" datetime="2023-09-07T16:40:44+08:00">2023-09-07</time>
             </span>
 
           
@@ -184,54 +184,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="一、URI-统一资源标识符"><a href="#一、URI-统一资源标识符" class="headerlink" title="一、URI-统一资源标识符"></a>一、URI-统一资源标识符</h3><p>URI 全称 Uniform Resource Identifier,指的是统一资源标识符，用来标识唯一的资源。<br>Web 上可用的每种资源-HTML 文档、图像、视频片段、程序等都由一个通用资源标识符(即 URI)进行定位。<br>URI 一般由三部分组成：</p>
-<ul>
-<li>1.访问资源的命名机制</li>
-<li>2.存放资源的主机名</li>
-<li>3.资源自身的名称，由路径表示</li>
-</ul>
-<p>看个例子：<a target="_blank" rel="noopener" href="http://www.xxx.com/html/html4">http://www.xxx.com/html/html4</a><br>这个 URi 是这样的：这是一个通过 HTTP 协议访问的资源，位于<a target="_blank" rel="noopener" href="http://www.xxx.com上,通过路径"/html/html4%22%E8%AE%BF%E9%97%AE%E3%80%82">www.xxx.com上，通过路径&quot;/html/html4&quot;访问。</a><br>有的 URI 指向一个资源的内部。这种 URi 以”#”结束，并跟着一个 anchor 标识符（称为片段标识符）。例如，下面是一个指向 section_2 的 URI：<a target="_blank" rel="noopener" href="http://somesite.com/html/top.htm#section_2">http://somesite.com/html/top.htm#section_2</a></p>
-<h4 id="1-1-绝对-URI"><a href="#1-1-绝对-URI" class="headerlink" title="1.1 绝对 URI"></a>1.1 绝对 URI</h4><p>URI 有绝对和相对之分，绝对的 URI 指以 scheme（后面跟着冒号）开头的 URI。前面提到的<a target="_blank" rel="noopener" href="http://www.cnn.com就是绝对的/">http://www.cnn.com就是绝对的</a> URI 的一个例子，其它的例子还有mailto:<a href="mailto:&#106;&#x65;&#x66;&#x66;&#x40;&#106;&#97;&#118;&#x61;&#106;&#x65;&#x66;&#x66;&#x2e;&#99;&#x6f;&#109;">&#106;&#x65;&#x66;&#x66;&#x40;&#106;&#97;&#118;&#x61;&#106;&#x65;&#x66;&#x66;&#x2e;&#99;&#x6f;&#109;</a>、news:comp.lang.java.help和xyz:&#x2F;&#x2F;whatever。你可以把绝对的 URI 看作是以某种方式引用某种资源，而这种方式对标识符出现的环境没有依赖。如果使用文件系统作类比，绝对的 URI 类似于从根目录开始的某个文件的径。</p>
-<h4 id="1-2-相对-URI"><a href="#1-2-相对-URI" class="headerlink" title="1.2 相对 URI"></a>1.2 相对 URI</h4><p>相对 URI 不包含任何命名规范信息。它的路径通常指同一台机器上的资源。相对 URI 可能含有相对路径（如，”..”表示上一层路径），还可能包含片段标识符。比如看下面的例子：</p>
-<ul>
-<li>相对 URI：<ul>
-<li>suppliers.html</li>
-<li>它扩展成完全的 URI 就是<a target="_blank" rel="noopener" href="http://www.xxx.com/suppliers.htm">http://www.xxx.com/suppliers.htm</a></li>
-</ul>
-</li>
-<li>一个图形的相对 URI<ul>
-<li><img src="../icons/logo.png" alt="logo"></li>
-<li>它扩展成完全的 URI 就是<a target="_blank" rel="noopener" href="http://www.xxx.com/icons/logo.png">http://www.xxx.com/icons/logo.png</a></li>
-</ul>
-</li>
-</ul>
-<p>与绝对的 URI 不同的，相对的 URI 不是以 scheme（后面跟着冒号）开始的 URI。 它的一个例子是articles&#x2F;articles.html。你可以把相对的 URI 看作是以某种方式引用某种资源，而这种方式依赖于标识符出现的环境。如果用文件系统作类比，相对的 URI 类似于从当前目录开始的文件路径。</p>
-<h4 id="1-3-URI-的用途"><a href="#1-3-URI-的用途" class="headerlink" title="1.3 URI 的用途"></a>1.3 URI 的用途</h4><p>在 HTML 中，URI 被用来：</p>
-<ol>
-<li>链接到另一个文档或资源</li>
-<li>链接到一个外部样式表或脚本</li>
-<li>在页内包含图形、对象或 applet</li>
-<li>建立图像映射</li>
-<li>提交一个表单</li>
-<li>建立一个框架文档</li>
-<li>引用一个外部参考</li>
-<li>指向一个描述文档的 metadata</li>
-</ol>
-<h3 id="二、URL-统一资源定位器"><a href="#二、URL-统一资源定位器" class="headerlink" title="二、URL-统一资源定位器"></a>二、URL-统一资源定位器</h3><p>URL 全称是 Uniform Resource Locator,指的是统一资源定位器,它是一种具体的 URI，即 URL 可以用来标识一个资源，而且还指明了如何 locate 这个资源。通俗地说，URL 是 Internet 上用来描述资源的字符串，主要用在各种 www 客户端和服务器程序是，特别是著名的 Mosaic。采用 URL 可以用一种统一的格式来描述各种信息资源，包括文件、服务器的地址和目录等。<br>URL 的第一个部分 http:&#x2F;&#x2F;表示要访问的文件的类型。在网上，这几乎总是使用 http（超文本传输协议，hypertext transfer protocol-用来转换网页的协议）；有时也使用 ftp（文件传输协议，file transfer protocol-用来传输软件和大文件；telnet（远程登录），主要用于远程交谈以及文件调用等，意思是浏览器正在阅读本地盘外的一个文件而不是一个远程计算机。</p>
-<h4 id="2-1-URL-组成"><a href="#2-1-URL-组成" class="headerlink" title="2.1 URL 组成"></a>2.1 URL 组成</h4><ol>
-<li>Internet 资源类型（schema）：指出 www 客户程序用来操作的工具。如http:&#x2F;&#x2F;表示 www 服务器，ftp:&#x2F;&#x2F;表示 ftp 服务器，gopher:&#x2F;&#x2F;表示 Gopher 服务器，而new:表示 Newgroup 新闻组。必需的。</li>
-<li>服务器地址（host）：指出 www 网页所在的服务器域名。必需的。</li>
-<li>端口（port）：有时（并非总是这样），对某些资源的访问来说，需给出相应的服务器提供端口。可选的。</li>
-<li>路径（path）：指明服务器上某资源的位置。与端口一样，路径并非总是需要的。可选的。</li>
-</ol>
-<p>URL 地址格式排列为：schema:&#x2F;&#x2F;host:port&#x2F;path<br>必须注意：www 上的服务器都是区分大小写的，所以千万要注意正确的 URL 大小写表达形式。</p>
-<h3 id="三、URN-统一资源名称"><a href="#三、URN-统一资源名称" class="headerlink" title="三、URN-统一资源名称"></a>三、URN-统一资源名称</h3><p>URN,全称 Uniform Resource Name,指的是统一资源命名,是通过名字来标识资源。比如mailto:<a href="mailto:&#106;&#97;&#118;&#97;&#45;&#x6e;&#101;&#x74;&#x40;&#x6a;&#97;&#118;&#97;&#46;&#115;&#117;&#110;&#x2e;&#x63;&#111;&#109;">&#106;&#97;&#118;&#97;&#45;&#x6e;&#101;&#x74;&#x40;&#x6a;&#97;&#118;&#97;&#46;&#115;&#117;&#110;&#x2e;&#x63;&#111;&#109;</a><br>URN 是 URL 的一种更新形式，统一资源名称(URN, Uniform Resource Name)不依赖于位置，并且有可能减少失效连接的个数。</p>
-<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>URI: Uniform Resource Identifier 指的是统一资源标识符<br>URL: Uniform Resource Location 指的是统一资源定位符<br>URN: Universal Resource Name 指的是统一资源名称<br>URI 指的是统一资源标识符，用唯一的标识来确定一个资源，它是一种抽象的定义，也就是说，不管使用什么方法来定义，只要能唯一的标识一个资源，就可以称为 URI。它是以某种统一的(标准化的)方式标识资源的简单字符串。<br>URL 和 URN 是 URI 的子集，URL 可以理解为使用地址来标识资源，URN 可以理解为使用名称来标识资源。<br>Web 上地址的基本形式是 URI，它代表统一资源标识符,有两种形式</p>
-<ul>
-<li>URL:目前 URI 的最普遍的形式就是无处不在的 URL 或统一资源定位器</li>
-<li>URN:URL 的一种更新形式，统一资源名称不依赖于位置，并且有可能减少失效链接的个数。但是其流行还需要时间，因为它需要更精密软件的支持。</li>
-</ul>
-
+          <h3 id="一、URI-统一资源标识符"><a href="#一、URI-统一资源标识符" class="headerlink" title="一、URI-统一资源标识符"></a>一、URI-统一资源标识符</h3><p>URI 全称 Uniform Resource Identifier,指的是统一资源标识符，用来标识唯一的资源。<br>Web 上可用的每种资源-HTML 文档、图像、视频片段、程序等都由一个通用资源标识符(即 URI)进行定位。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/09/07/URL%20%E5%92%8C%20URI%20%E7%9A%84%E5%8C%BA%E5%88%AB/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
