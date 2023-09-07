@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zzjxing.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="一、URI-统一资源标识符URI 全称 Uniform Resource Identifier,指的是统一资源标识符，用来标识唯一的资源。Web 上可用的每种资源-HTML 文档、图像、视频片段、程序等都由一个通用资源标识符(即 URI)进行定位。URI 一般由三部分组成：  1.访问资源的命名机制 2.存放资源的主机名 3.资源自身的名称，由路径表示  看个例子：http:&#x2F;&#x2F;www.xxx.c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo-zjx-blog">
+<meta property="og:url" content="https://zzjxing.github.io/2023/09/07/URL%20%E5%92%8C%20URI%20%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
+<meta property="og:site_name" content="Hexo-zjx-blog">
+<meta property="og:description" content="一、URI-统一资源标识符URI 全称 Uniform Resource Identifier,指的是统一资源标识符，用来标识唯一的资源。Web 上可用的每种资源-HTML 文档、图像、视频片段、程序等都由一个通用资源标识符(即 URI)进行定位。URI 一般由三部分组成：  1.访问资源的命名机制 2.存放资源的主机名 3.资源自身的名称，由路径表示  看个例子：http:&#x2F;&#x2F;www.xxx.c">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zzjxing.github.io/2023/09/07/icons/logo.png">
+<meta property="article:published_time" content="2023-09-07T08:40:44.146Z">
+<meta property="article:modified_time" content="2023-09-07T08:40:44.146Z">
+<meta property="article:author" content="zhangjiaxing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zzjxing.github.io/2023/09/07/icons/logo.png">
+
+<link rel="canonical" href="https://zzjxing.github.io/2023/09/07/URL%20%E5%92%8C%20URI%20%E7%9A%84%E5%8C%BA%E5%88%AB/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | Hexo-zjx-blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo-zjx-blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zzjxing.github.io/2023/09/07/URL%20%E5%92%8C%20URI%20%E7%9A%84%E5%8C%BA%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zhangjiaxing">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo-zjx-blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-09-07 16:40:44" itemprop="dateCreated datePublished" datetime="2023-09-07T16:40:44+08:00">2023-09-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="一、URI-统一资源标识符"><a href="#一、URI-统一资源标识符" class="headerlink" title="一、URI-统一资源标识符"></a>一、URI-统一资源标识符</h3><p>URI 全称 Uniform Resource Identifier,指的是统一资源标识符，用来标识唯一的资源。<br>Web 上可用的每种资源-HTML 文档、图像、视频片段、程序等都由一个通用资源标识符(即 URI)进行定位。<br>URI 一般由三部分组成：</p>
+<ul>
+<li>1.访问资源的命名机制</li>
+<li>2.存放资源的主机名</li>
+<li>3.资源自身的名称，由路径表示</li>
+</ul>
+<p>看个例子：<a target="_blank" rel="noopener" href="http://www.xxx.com/html/html4">http://www.xxx.com/html/html4</a><br>这个 URi 是这样的：这是一个通过 HTTP 协议访问的资源，位于<a target="_blank" rel="noopener" href="http://www.xxx.com上,通过路径"/html/html4%22%E8%AE%BF%E9%97%AE%E3%80%82">www.xxx.com上，通过路径&quot;/html/html4&quot;访问。</a><br>有的 URI 指向一个资源的内部。这种 URi 以”#”结束，并跟着一个 anchor 标识符（称为片段标识符）。例如，下面是一个指向 section_2 的 URI：<a target="_blank" rel="noopener" href="http://somesite.com/html/top.htm#section_2">http://somesite.com/html/top.htm#section_2</a></p>
+<h4 id="1-1-绝对-URI"><a href="#1-1-绝对-URI" class="headerlink" title="1.1 绝对 URI"></a>1.1 绝对 URI</h4><p>URI 有绝对和相对之分，绝对的 URI 指以 scheme（后面跟着冒号）开头的 URI。前面提到的<a target="_blank" rel="noopener" href="http://www.cnn.com就是绝对的/">http://www.cnn.com就是绝对的</a> URI 的一个例子，其它的例子还有mailto:<a href="mailto:&#106;&#101;&#x66;&#x66;&#64;&#x6a;&#97;&#118;&#x61;&#x6a;&#x65;&#x66;&#102;&#x2e;&#x63;&#111;&#x6d;">&#106;&#101;&#x66;&#x66;&#64;&#x6a;&#97;&#118;&#x61;&#x6a;&#x65;&#x66;&#102;&#x2e;&#x63;&#111;&#x6d;</a>、news:comp.lang.java.help和xyz:&#x2F;&#x2F;whatever。你可以把绝对的 URI 看作是以某种方式引用某种资源，而这种方式对标识符出现的环境没有依赖。如果使用文件系统作类比，绝对的 URI 类似于从根目录开始的某个文件的径。</p>
+<h4 id="1-2-相对-URI"><a href="#1-2-相对-URI" class="headerlink" title="1.2 相对 URI"></a>1.2 相对 URI</h4><p>相对 URI 不包含任何命名规范信息。它的路径通常指同一台机器上的资源。相对 URI 可能含有相对路径（如，”..”表示上一层路径），还可能包含片段标识符。比如看下面的例子：</p>
+<ul>
+<li>相对 URI：<ul>
+<li>suppliers.html</li>
+<li>它扩展成完全的 URI 就是<a target="_blank" rel="noopener" href="http://www.xxx.com/suppliers.htm">http://www.xxx.com/suppliers.htm</a></li>
+</ul>
+</li>
+<li>一个图形的相对 URI<ul>
+<li><img src="../icons/logo.png" alt="logo"></li>
+<li>它扩展成完全的 URI 就是<a target="_blank" rel="noopener" href="http://www.xxx.com/icons/logo.png">http://www.xxx.com/icons/logo.png</a></li>
+</ul>
+</li>
+</ul>
+<p>与绝对的 URI 不同的，相对的 URI 不是以 scheme（后面跟着冒号）开始的 URI。 它的一个例子是articles&#x2F;articles.html。你可以把相对的 URI 看作是以某种方式引用某种资源，而这种方式依赖于标识符出现的环境。如果用文件系统作类比，相对的 URI 类似于从当前目录开始的文件路径。</p>
+<h4 id="1-3-URI-的用途"><a href="#1-3-URI-的用途" class="headerlink" title="1.3 URI 的用途"></a>1.3 URI 的用途</h4><p>在 HTML 中，URI 被用来：</p>
+<ol>
+<li>链接到另一个文档或资源</li>
+<li>链接到一个外部样式表或脚本</li>
+<li>在页内包含图形、对象或 applet</li>
+<li>建立图像映射</li>
+<li>提交一个表单</li>
+<li>建立一个框架文档</li>
+<li>引用一个外部参考</li>
+<li>指向一个描述文档的 metadata</li>
+</ol>
+<h3 id="二、URL-统一资源定位器"><a href="#二、URL-统一资源定位器" class="headerlink" title="二、URL-统一资源定位器"></a>二、URL-统一资源定位器</h3><p>URL 全称是 Uniform Resource Locator,指的是统一资源定位器,它是一种具体的 URI，即 URL 可以用来标识一个资源，而且还指明了如何 locate 这个资源。通俗地说，URL 是 Internet 上用来描述资源的字符串，主要用在各种 www 客户端和服务器程序是，特别是著名的 Mosaic。采用 URL 可以用一种统一的格式来描述各种信息资源，包括文件、服务器的地址和目录等。<br>URL 的第一个部分 http:&#x2F;&#x2F;表示要访问的文件的类型。在网上，这几乎总是使用 http（超文本传输协议，hypertext transfer protocol-用来转换网页的协议）；有时也使用 ftp（文件传输协议，file transfer protocol-用来传输软件和大文件；telnet（远程登录），主要用于远程交谈以及文件调用等，意思是浏览器正在阅读本地盘外的一个文件而不是一个远程计算机。</p>
+<h4 id="2-1-URL-组成"><a href="#2-1-URL-组成" class="headerlink" title="2.1 URL 组成"></a>2.1 URL 组成</h4><ol>
+<li>Internet 资源类型（schema）：指出 www 客户程序用来操作的工具。如http:&#x2F;&#x2F;表示 www 服务器，ftp:&#x2F;&#x2F;表示 ftp 服务器，gopher:&#x2F;&#x2F;表示 Gopher 服务器，而new:表示 Newgroup 新闻组。必需的。</li>
+<li>服务器地址（host）：指出 www 网页所在的服务器域名。必需的。</li>
+<li>端口（port）：有时（并非总是这样），对某些资源的访问来说，需给出相应的服务器提供端口。可选的。</li>
+<li>路径（path）：指明服务器上某资源的位置。与端口一样，路径并非总是需要的。可选的。</li>
+</ol>
+<p>URL 地址格式排列为：schema:&#x2F;&#x2F;host:port&#x2F;path<br>必须注意：www 上的服务器都是区分大小写的，所以千万要注意正确的 URL 大小写表达形式。</p>
+<h3 id="三、URN-统一资源名称"><a href="#三、URN-统一资源名称" class="headerlink" title="三、URN-统一资源名称"></a>三、URN-统一资源名称</h3><p>URN,全称 Uniform Resource Name,指的是统一资源命名,是通过名字来标识资源。比如mailto:<a href="mailto:&#106;&#x61;&#118;&#x61;&#x2d;&#110;&#x65;&#x74;&#64;&#x6a;&#x61;&#118;&#97;&#46;&#x73;&#117;&#x6e;&#x2e;&#99;&#x6f;&#109;">&#106;&#x61;&#118;&#x61;&#x2d;&#110;&#x65;&#x74;&#64;&#x6a;&#x61;&#118;&#97;&#46;&#x73;&#117;&#x6e;&#x2e;&#99;&#x6f;&#109;</a><br>URN 是 URL 的一种更新形式，统一资源名称(URN, Uniform Resource Name)不依赖于位置，并且有可能减少失效连接的个数。</p>
+<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>URI: Uniform Resource Identifier 指的是统一资源标识符<br>URL: Uniform Resource Location 指的是统一资源定位符<br>URN: Universal Resource Name 指的是统一资源名称<br>URI 指的是统一资源标识符，用唯一的标识来确定一个资源，它是一种抽象的定义，也就是说，不管使用什么方法来定义，只要能唯一的标识一个资源，就可以称为 URI。它是以某种统一的(标准化的)方式标识资源的简单字符串。<br>URL 和 URN 是 URI 的子集，URL 可以理解为使用地址来标识资源，URN 可以理解为使用名称来标识资源。<br>Web 上地址的基本形式是 URI，它代表统一资源标识符,有两种形式</p>
+<ul>
+<li>URL:目前 URI 的最普遍的形式就是无处不在的 URL 或统一资源定位器</li>
+<li>URN:URL 的一种更新形式，统一资源名称不依赖于位置，并且有可能减少失效链接的个数。但是其流行还需要时间，因为它需要更精密软件的支持。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/08/17/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95%20c++%E5%AE%9E%E7%8E%B0/" rel="prev" title="迪杰斯特拉算法 c++实现">
+      <i class="fa fa-chevron-left"></i> 迪杰斯特拉算法 c++实现
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81URI-%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">1.</span> <span class="nav-text">一、URI-统一资源标识符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E7%BB%9D%E5%AF%B9-URI"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 绝对 URI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E7%9B%B8%E5%AF%B9-URI"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 相对 URI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-URI-%E7%9A%84%E7%94%A8%E9%80%94"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 URI 的用途</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81URL-%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">二、URL-统一资源定位器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-URL-%E7%BB%84%E6%88%90"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 URL 组成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81URN-%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%90%8D%E7%A7%B0"><span class="nav-number">3.</span> <span class="nav-text">三、URN-统一资源名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">四、总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">zhangjiaxing</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhangjiaxing</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
