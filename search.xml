@@ -13,7 +13,7 @@
 <li>3.资源自身的名称，由路径表示</li>
 </ul>
 <p>看个例子：<a href="http://www.xxx.com/html/html4">http://www.xxx.com/html/html4</a><br>这个 URi 是这样的：这是一个通过 HTTP 协议访问的资源，位于<a href="http://www.xxx.com上,通过路径"/html/html4%22%E8%AE%BF%E9%97%AE%E3%80%82">www.xxx.com上，通过路径&quot;/html/html4&quot;访问。</a><br>有的 URI 指向一个资源的内部。这种 URi 以”#”结束，并跟着一个 anchor 标识符（称为片段标识符）。例如，下面是一个指向 section_2 的 URI：<a href="http://somesite.com/html/top.htm#section_2">http://somesite.com/html/top.htm#section_2</a></p>
-<h4 id="1-1-绝对-URI"><a href="#1-1-绝对-URI" class="headerlink" title="1.1 绝对 URI"></a>1.1 绝对 URI</h4><p>URI 有绝对和相对之分，绝对的 URI 指以 scheme（后面跟着冒号）开头的 URI。前面提到的<a href="http://www.cnn.com就是绝对的/">http://www.cnn.com就是绝对的</a> URI 的一个例子，其它的例子还有mailto:<a href="mailto:&#106;&#x65;&#x66;&#x66;&#x40;&#x6a;&#x61;&#x76;&#x61;&#106;&#101;&#x66;&#102;&#46;&#99;&#x6f;&#109;">&#106;&#x65;&#x66;&#x66;&#x40;&#x6a;&#x61;&#x76;&#x61;&#106;&#101;&#x66;&#102;&#46;&#99;&#x6f;&#109;</a>、news:comp.lang.java.help和xyz:&#x2F;&#x2F;whatever。你可以把绝对的 URI 看作是以某种方式引用某种资源，而这种方式对标识符出现的环境没有依赖。如果使用文件系统作类比，绝对的 URI 类似于从根目录开始的某个文件的径。</p>
+<h4 id="1-1-绝对-URI"><a href="#1-1-绝对-URI" class="headerlink" title="1.1 绝对 URI"></a>1.1 绝对 URI</h4><p>URI 有绝对和相对之分，绝对的 URI 指以 scheme（后面跟着冒号）开头的 URI。前面提到的<a href="http://www.cnn.com就是绝对的/">http://www.cnn.com就是绝对的</a> URI 的一个例子，其它的例子还有mailto:<a href="mailto:&#106;&#x65;&#x66;&#102;&#x40;&#x6a;&#97;&#x76;&#x61;&#x6a;&#101;&#102;&#102;&#46;&#x63;&#x6f;&#109;">&#106;&#x65;&#x66;&#102;&#x40;&#x6a;&#97;&#x76;&#x61;&#x6a;&#101;&#102;&#102;&#46;&#x63;&#x6f;&#109;</a>、news:comp.lang.java.help和xyz:&#x2F;&#x2F;whatever。你可以把绝对的 URI 看作是以某种方式引用某种资源，而这种方式对标识符出现的环境没有依赖。如果使用文件系统作类比，绝对的 URI 类似于从根目录开始的某个文件的径。</p>
 <h4 id="1-2-相对-URI"><a href="#1-2-相对-URI" class="headerlink" title="1.2 相对 URI"></a>1.2 相对 URI</h4><p>相对 URI 不包含任何命名规范信息。它的路径通常指同一台机器上的资源。相对 URI 可能含有相对路径（如，”..”表示上一层路径），还可能包含片段标识符。比如看下面的例子：</p>
 <ul>
 <li>相对 URI：<ul>
@@ -47,13 +47,16 @@
 <li>路径（path）：指明服务器上某资源的位置。与端口一样，路径并非总是需要的。可选的。</li>
 </ol>
 <p>URL 地址格式排列为：schema:&#x2F;&#x2F;host:port&#x2F;path<br>必须注意：www 上的服务器都是区分大小写的，所以千万要注意正确的 URL 大小写表达形式。</p>
-<h3 id="三、URN-统一资源名称"><a href="#三、URN-统一资源名称" class="headerlink" title="三、URN-统一资源名称"></a>三、URN-统一资源名称</h3><p>URN,全称 Uniform Resource Name,指的是统一资源命名,是通过名字来标识资源。比如mailto:<a href="mailto:&#106;&#97;&#x76;&#x61;&#45;&#x6e;&#101;&#x74;&#x40;&#106;&#x61;&#118;&#x61;&#46;&#x73;&#x75;&#110;&#46;&#x63;&#111;&#x6d;">&#106;&#97;&#x76;&#x61;&#45;&#x6e;&#101;&#x74;&#x40;&#106;&#x61;&#118;&#x61;&#46;&#x73;&#x75;&#110;&#46;&#x63;&#111;&#x6d;</a><br>URN 是 URL 的一种更新形式，统一资源名称(URN, Uniform Resource Name)不依赖于位置，并且有可能减少失效连接的个数。</p>
+<h3 id="三、URN-统一资源名称"><a href="#三、URN-统一资源名称" class="headerlink" title="三、URN-统一资源名称"></a>三、URN-统一资源名称</h3><p>URN,全称 Uniform Resource Name,指的是统一资源命名,是通过名字来标识资源。比如mailto:<a href="mailto:&#106;&#x61;&#118;&#97;&#45;&#110;&#x65;&#116;&#64;&#106;&#97;&#118;&#x61;&#46;&#115;&#x75;&#x6e;&#46;&#x63;&#x6f;&#x6d;">&#106;&#x61;&#118;&#97;&#45;&#110;&#x65;&#116;&#64;&#106;&#97;&#118;&#x61;&#46;&#115;&#x75;&#x6e;&#46;&#x63;&#x6f;&#x6d;</a><br>URN 是 URL 的一种更新形式，统一资源名称(URN, Uniform Resource Name)不依赖于位置，并且有可能减少失效连接的个数。</p>
 <h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>URI: Uniform Resource Identifier 指的是统一资源标识符<br>URL: Uniform Resource Location 指的是统一资源定位符<br>URN: Universal Resource Name 指的是统一资源名称<br>URI 指的是统一资源标识符，用唯一的标识来确定一个资源，它是一种抽象的定义，也就是说，不管使用什么方法来定义，只要能唯一的标识一个资源，就可以称为 URI。它是以某种统一的(标准化的)方式标识资源的简单字符串。<br>URL 和 URN 是 URI 的子集，URL 可以理解为使用地址来标识资源，URN 可以理解为使用名称来标识资源。<br>Web 上地址的基本形式是 URI，它代表统一资源标识符,有两种形式</p>
 <ul>
 <li>URL:目前 URI 的最普遍的形式就是无处不在的 URL 或统一资源定位器</li>
 <li>URN:URL 的一种更新形式，统一资源名称不依赖于位置，并且有可能减少失效链接的个数。但是其流行还需要时间，因为它需要更精密软件的支持。</li>
 </ul>
 ]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
   </entry>
   <entry>
     <title>go 中json格式说明</title>
@@ -143,6 +146,9 @@
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">    <span class="string">&quot;encoding/json&quot;</span></span><br><span class="line">    <span class="string">&quot;fmt&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Person <span class="keyword">struct</span> &#123;</span><br><span class="line">    Name <span class="type">string</span></span><br><span class="line">    Age  <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现 json.Marshaler 接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p Person)</span></span> MarshalJSON() ([]<span class="type">byte</span>, <span class="type">error</span>) &#123;</span><br><span class="line">    <span class="keyword">type</span> CustomPerson Person</span><br><span class="line">    customAge := p.Age + <span class="number">10</span> <span class="comment">// 假设偏移量为 10</span></span><br><span class="line">    cp := CustomPerson(p)</span><br><span class="line">    <span class="keyword">return</span> json.Marshal(cp)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现 json.Unmarshaler 接口</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p *Person)</span></span> UnmarshalJSON(data []<span class="type">byte</span>) <span class="type">error</span> &#123;</span><br><span class="line">    <span class="keyword">type</span> CustomPerson Person</span><br><span class="line">    <span class="keyword">var</span> cp CustomPerson</span><br><span class="line">    <span class="keyword">if</span> err := json.Unmarshal(data, &amp;cp); err != <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> err</span><br><span class="line">    &#125;</span><br><span class="line">    p.Age = cp.Age - <span class="number">10</span> <span class="comment">// 假设偏移量为 10</span></span><br><span class="line">    p.Name = cp.Name</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 序列化</span></span><br><span class="line">    p1 := Person&#123;Name: <span class="string">&quot;Alice&quot;</span>, Age: <span class="number">30</span>&#125;</span><br><span class="line">    jsonData, _ := json.Marshal(p1)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Serialized Data:&quot;</span>, <span class="type">string</span>(jsonData))</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 反序列化</span></span><br><span class="line">    jsonData = []<span class="type">byte</span>(<span class="string">`&#123;&quot;Name&quot;:&quot;Bob&quot;,&quot;Age&quot;:40&#125;`</span>)</span><br><span class="line">    <span class="keyword">var</span> p2 Person</span><br><span class="line">    _ = json.Unmarshal(jsonData, &amp;p2)</span><br><span class="line">    fmt.Println(<span class="string">&quot;Deserialized Data:&quot;</span>, p2)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在上面的例子中，我们在 MarshalJSON 方法中将年龄字段的值加上了偏移量 10，并在 UnmarshalJSON 方法中将年龄字段的值减去了偏移量 10。这样在序列化和反序列化时，年龄字段的值就会加上或减去偏移量，从而实现了自定义的序列化和反序列化行为。<br>golang的数据类型定义请参考<a href="https://gfw.go101.org/article/type-system-overview.html">https://gfw.go101.org/article/type-system-overview.html</a><br>Origin Link: <a href="https://confluence.deepglint.com/pages/viewpage.action?pageId=46104357">https://confluence.deepglint.com/pages/viewpage.action?pageId=46104357</a></p>
 ]]></content>
+      <tags>
+        <tag>学习,代码,go</tag>
+      </tags>
   </entry>
   <entry>
     <title>go 常用工具库</title>
@@ -203,6 +209,9 @@
 
 <p>这个例子中展示了<code>strings</code>包中的一些常用函数，通过这些函数，可以方便地处理和操作字符串，完成各种字符串处理的任务。</p>
 ]]></content>
+      <tags>
+        <tag>学习,代码,go</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -223,7 +232,7 @@
 ]]></content>
   </entry>
   <entry>
-    <title>linux 常用命令</title>
+    <title>Linux 常用命令</title>
     <url>/2023/08/04/linux%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p>用于记录linux中比较有用的命令</p>
 <h2 id="查找文件find"><a href="#查找文件find" class="headerlink" title="查找文件find"></a>查找文件<code>find</code></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查找指定文件名的文件：</span></span><br><span class="line">find /path/to/search -name <span class="string">&quot;filename&quot;</span></span><br><span class="line"><span class="comment"># 查找指定类型的文件：</span></span><br><span class="line">find /path/to/search -<span class="built_in">type</span> f  <span class="comment"># 查找普通文件</span></span><br><span class="line">find /path/to/search -<span class="built_in">type</span> d  <span class="comment"># 查找目录</span></span><br><span class="line">find /path/to/search -<span class="built_in">type</span> l  <span class="comment"># 查找符号链接</span></span><br><span class="line"><span class="comment"># 查找文件名包含特定字符串的文件：</span></span><br><span class="line">find /path/to/search -name <span class="string">&quot;*substring*&quot;</span></span><br><span class="line"><span class="comment"># 按照文件大小进行查找：</span></span><br><span class="line">find /path/to/search -size +10M  <span class="comment"># 查找大小大于10MB的文件</span></span><br><span class="line">find /path/to/search -size -5M   <span class="comment"># 查找大小小于5MB的文件</span></span><br><span class="line"><span class="comment"># 按照文件权限进行查找：</span></span><br><span class="line">find /path/to/search -perm 644  <span class="comment"># 查找文件权限为644的文件</span></span><br><span class="line"><span class="comment"># 在特定时间范围内查找文件：</span></span><br><span class="line">find /path/to/search -mtime +7  <span class="comment"># 查找修改时间在7天之前的文件</span></span><br><span class="line">find /path/to/search -mtime -3  <span class="comment"># 查找修改时间在3天之内的文件</span></span><br></pre></td></tr></table></figure>
@@ -294,10 +303,13 @@
 </ol>
 <p>这些只是 <code>curl</code> 命令的一些常见用法，它可以根据不同的需求进行更多的配置和定制。通过 <code>man curl</code> 命令可以查看完整的 <code>curl</code> 命令手册，了解更多参数和选项的用法。</p>
 ]]></content>
+      <tags>
+        <tag>学习,代码,Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title>迪杰斯特拉算法 c++实现</title>
-    <url>/2023/08/17/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95%20c++%E5%AE%9E%E7%8E%B0/</url>
+    <url>/2020/05/19/%E8%BF%AA%E6%9D%B0%E6%96%AF%E7%89%B9%E6%8B%89%E7%AE%97%E6%B3%95%20c++%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<p>面试代码题： Leetcode.1514. 概率最大的路径，一个变种的迪杰斯特拉算法题</p>
 <p>没找到基于c++ vector容器实现的迪杰斯特拉算法，自己写了个。</p>
 <span id="more"></span>
@@ -306,20 +318,17 @@
 
 <p>测试代码：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// n:节点数量 start：起点（0~n-1）</span></span><br><span class="line">	<span class="type">int</span> n, start;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; start;</span><br><span class="line">	vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">Graph</span>(n, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">	<span class="comment">// 输入图</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">			cin &gt;&gt; Graph[i][j];</span><br><span class="line">	<span class="comment">// 计算</span></span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; ret = <span class="built_in">Dijkstra</span>(Graph, start);</span><br><span class="line">	<span class="comment">// 输出</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; ret.<span class="built_in">size</span>(); i++)</span><br><span class="line">		cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; ret[i] &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​</p>
 ]]></content>
+      <tags>
+        <tag>学习,代码,c++</tag>
+      </tags>
   </entry>
   <entry>
     <title>C++开发常见面试题整理（含代码题）</title>
     <url>/2023/08/15/C++%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%95%B4%E7%90%86%EF%BC%88%E5%90%AB%E4%BB%A3%E7%A0%81%E9%A2%98%EF%BC%89/</url>
-    <content><![CDATA[<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<p><strong>Table of Contents</strong>  <em>generated with <a href="https://github.com/thlorenz/doctoc">DocToc</a></em></p>
-<h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><h2 id="1-C和C-区别"><a href="#1-C和C-区别" class="headerlink" title="1. C和C++区别"></a>1. C和C++区别</h2><p>设计思想上：</p>
+    <content><![CDATA[<h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><h2 id="1-C和C-区别"><a href="#1-C和C-区别" class="headerlink" title="1. C和C++区别"></a>1. C和C++区别</h2><p>设计思想上：</p>
 <p>​		C++是面向对象的语言，而 C 是面向过程的结构化编程语言</p>
-<p>语法上：</p>
-<span id="more"></span>
-<p>​		C++具有重载、继承和多态三种特性</p>
+<p> int main(){    &#x2F;&#x2F; n:节点数量 start：起点（0~n-1）    int n, start;    cin &gt;&gt; n &gt;&gt; start;    vector&lt;vector<int>&gt; Graph(n, vector<int>(n, 0));    &#x2F;&#x2F; 输入图    for (int i &#x3D; 0; i &lt; n; i++)        for (int j &#x3D; 0; j &lt; n; j++)            cin &gt;&gt; Graph[i][j];    &#x2F;&#x2F; 计算    vector<int> ret &#x3D; Dijkstra(Graph, start);    &#x2F;&#x2F; 输出    for (int i &#x3D; 0; i &lt; ret.size(); i++)        cout &lt;&lt; i &lt;&lt; “ “ &lt;&lt; ret[i] &lt;&lt; endl;    return 0;}C++</p>
 <p>​		C++相比 C，增加多许多类型安全的功能，比如强制类型转换</p>
 <p>​		C++支持范式编程，比如模板类、函数模板等</p>
 <h2 id="2-static关键字"><a href="#2-static关键字" class="headerlink" title="2. static关键字"></a>2. static关键字</h2><ol>
@@ -1002,7 +1011,7 @@
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">generateParenthesis</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        vector&lt;string&gt; res;</span><br><span class="line">        <span class="built_in">backTrack</span>(res,<span class="string">&quot;&quot;</span>,<span class="number">0</span>,<span class="number">0</span>,n);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">backTrack</span><span class="params">(vector&lt;string&gt; &amp;res,string str,<span class="type">int</span> l,<span class="type">int</span> r,<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(l&gt;n || r&gt;n || r&gt;l) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span>(l == n &amp;&amp; r==n) res.<span class="built_in">push_back</span>(str);</span><br><span class="line">        <span class="built_in">backTrack</span>(res,str+<span class="string">&#x27;(&#x27;</span>,l+<span class="number">1</span>,r,n);</span><br><span class="line">        <span class="built_in">backTrack</span>(res,str+<span class="string">&#x27;)&#x27;</span>,l,r+<span class="number">1</span>,n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h3 id="4-复原-IP-地址"><a href="#4-复原-IP-地址" class="headerlink" title="4. 复原 IP 地址"></a>4. 复原 IP 地址</h3><p>有效 IP 地址 正好由四个整数（每个整数位于 0 到 255 之间组成，且不能含有前导 0），整数之间用 ‘.’ 分隔。</p>
-<p>例如：”0.1.2.201” 和 “192.168.1.1” 是 有效 IP 地址，但是 “0.011.255.245”、”192.168.1.312” 和 “<a href="mailto:&#x31;&#57;&#x32;&#46;&#49;&#x36;&#56;&#x40;&#49;&#x2e;&#x31;">&#x31;&#57;&#x32;&#46;&#49;&#x36;&#56;&#x40;&#49;&#x2e;&#x31;</a>“ 是 无效 IP 地址。<br>给定一个只包含数字的字符串 s ，用以表示一个 IP 地址，返回所有可能的有效 IP 地址，这些地址可以通过在 s 中插入 ‘.’ 来形成。你 不能 重新排序或删除 s 中的任何数字。你可以按 任何 顺序返回答案。</p>
+<p>例如：”0.1.2.201” 和 “192.168.1.1” 是 有效 IP 地址，但是 “0.011.255.245”、”192.168.1.312” 和 “<a href="mailto:&#49;&#57;&#50;&#46;&#x31;&#x36;&#56;&#x40;&#49;&#x2e;&#49;">&#49;&#57;&#50;&#46;&#x31;&#x36;&#56;&#x40;&#49;&#x2e;&#49;</a>“ 是 无效 IP 地址。<br>给定一个只包含数字的字符串 s ，用以表示一个 IP 地址，返回所有可能的有效 IP 地址，这些地址可以通过在 s 中插入 ‘.’ 来形成。你 不能 重新排序或删除 s 中的任何数字。你可以按 任何 顺序返回答案。</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;string&gt; ret;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">backTrace</span><span class="params">(string &amp;s,<span class="type">int</span> cnt,<span class="type">int</span> index,string&amp; str)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cnt == <span class="number">4</span> || index == s.<span class="built_in">size</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(cnt == <span class="number">4</span> &amp;&amp; index == s.<span class="built_in">size</span>())</span><br><span class="line">                ret.<span class="built_in">push_back</span>(str.<span class="built_in">substr</span>(<span class="number">0</span>,str.<span class="built_in">size</span>()<span class="number">-1</span>));</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">3</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(index+i&gt;s.<span class="built_in">size</span>()) <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">if</span>(s[index]==<span class="string">&#x27;0&#x27;</span>&amp;&amp;i!=<span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">if</span>(i==<span class="number">3</span>&amp;&amp;s.<span class="built_in">substr</span>(index,i)&gt;<span class="string">&quot;255&quot;</span>) <span class="keyword">return</span>;</span><br><span class="line">            str+=s.<span class="built_in">substr</span>(index,i);</span><br><span class="line">            str.<span class="built_in">push_back</span>(<span class="string">&#x27;.&#x27;</span>);</span><br><span class="line">            <span class="built_in">backTrace</span>(s,cnt+<span class="number">1</span>,index+i,str);</span><br><span class="line">            str=str.<span class="built_in">substr</span>(<span class="number">0</span>,str.<span class="built_in">size</span>()-i<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">restoreIpAddresses</span><span class="params">(string s)</span> </span>&#123;</span><br><span class="line">        string str=<span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="built_in">backTrace</span>(s,<span class="number">0</span>,<span class="number">0</span>,str);</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h3 id="5-反转字符串中的单词"><a href="#5-反转字符串中的单词" class="headerlink" title="5. 反转字符串中的单词"></a>5. 反转字符串中的单词</h3><p>给你一个字符串 s ，请你反转字符串中 单词 的顺序。</p>
@@ -1465,5 +1474,11 @@
 <p>解决方案</p>
 <p>将listenfd设置成LT阻塞，或者ET非阻塞模式下while包裹accept即可解决问题。</p>
 <h2 id="综合能力"><a href="#综合能力" class="headerlink" title="综合能力"></a>综合能力</h2><h3 id="1、你的项目解决了哪些其他同类项目没有解决的问题？"><a href="#1、你的项目解决了哪些其他同类项目没有解决的问题？" class="headerlink" title="1、你的项目解决了哪些其他同类项目没有解决的问题？"></a>1、你的项目解决了哪些其他同类项目没有解决的问题？</h3><h3 id="2、说一下前端发送请求后，服务器处理的过程，中间涉及哪些协议？"><a href="#2、说一下前端发送请求后，服务器处理的过程，中间涉及哪些协议？" class="headerlink" title="2、说一下前端发送请求后，服务器处理的过程，中间涉及哪些协议？"></a>2、说一下前端发送请求后，服务器处理的过程，中间涉及哪些协议？</h3>]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/09/12/Untitled/</url>
+    <content><![CDATA[<hr>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2>]]></content>
   </entry>
 </search>
