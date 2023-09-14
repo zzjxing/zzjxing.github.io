@@ -386,7 +386,24 @@
 
             <div class="description center-align">
                 
-                    
+                <span id="subtitle"></span>
+                <script src="/libs/typed/typed.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "从来没有真正的绝境, 只有心灵的迷途",
+                            
+                                "Never really desperate, only the lost of the soul",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: false
+                    });
+                </script>
                 
             </div>
         </div>
@@ -546,41 +563,6 @@
                     
 
                     
-
-                    
-                        <link rel="stylesheet" href="/libs/dplayer/DPlayer.min.css">
-<div class="video-player">
-    
-    <div class="title center-align">
-        <i class="fas fa-video-camera"></i>&nbsp;&nbsp;精彩视频
-    </div>
-    
-    <div class="row">
-		
-			<iframe src='//player.bilibili.com/player.html?aid=318347943&bvid=BV1eP41187Pr&cid=1261439756&p=1' scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" align="middle"  width="100%"> </iframe>
-		
-    </div>
-</div>
-
-<script src="/libs/dplayer/DPlayer.min.js"></script>
-<script>
-    $(function () {
-        new DPlayer({
-            container: document.getElementById('dplayer'),
-            autoplay: 'false' === 'true',
-            theme: '#42b983',
-            loop: 'false' === 'true',
-            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
-            preload: 'auto',
-            volume: Number('0.7'),
-            video: {
-                url: '',
-                pic: '',
-                thumbnails: ''
-            }
-        });
-    });
-</script>
 
                     
 
