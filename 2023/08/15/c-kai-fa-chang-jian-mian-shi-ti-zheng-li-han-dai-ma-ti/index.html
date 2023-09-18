@@ -7,7 +7,9 @@
     <meta name="keywords" content="C++开发常见面试题整理（含代码题）, 风是自由的，希望你也是。">
     <meta name="description" content="C++1. C和C++区别设计思想上：
 ​		C++是面向对象的语言，而 C 是面向过程的结构化编程语言
-xxxxxxxxxx int main(){    &amp;#x2F;&amp;#x2F; n:节点数量 start：起点（0~n-1）    in">
+​		C++相比 C，增加多许多类型安全的功能，比如强制类型转换
+​		C++支持范式编程，比如模板类、函数模板等
+2. static">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -396,21 +398,21 @@ xxxxxxxxxx int main(){    &amp;#x2F;&amp;#x2F; n:节点数量 start：起点（
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-09-13
+                    2023-09-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    55.1k
+                    54.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    231 分
+                    230 分
                 </div>
                 
 
@@ -435,8 +437,6 @@ xxxxxxxxxx int main(){    &amp;#x2F;&amp;#x2F; n:节点数量 start：起点（
             <div id="articleContent">
                 <h1 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h1><h2 id="1-C和C-区别"><a href="#1-C和C-区别" class="headerlink" title="1. C和C++区别"></a>1. C和C++区别</h2><p>设计思想上：</p>
 <p>​		C++是面向对象的语言，而 C 是面向过程的结构化编程语言</p>
-<p>xxxxxxxxxx int main(){    &#x2F;&#x2F; n:节点数量 start：起点（0~n-1）    int n, start;    cin &gt;&gt; n &gt;&gt; start;    vector&lt;vector<int>&gt; Graph(n, vector<int>(n, 0));    &#x2F;&#x2F; 输入图    for (int i &#x3D; 0; i &lt; n; i++)        for (int j &#x3D; 0; j &lt; n; j++)            cin &gt;&gt; Graph[i][j];    &#x2F;&#x2F; 计算    vector<int> ret &#x3D; Dijkstra(Graph, start);    &#x2F;&#x2F; 输出    for (int i &#x3D; 0; i &lt; ret.size(); i++)        cout &lt;&lt; i &lt;&lt; “ “ &lt;&lt; ret[i] &lt;&lt; endl;    return 0;}C++</p>
-<p> int main(){    &#x2F;&#x2F; n:节点数量 start：起点（0~n-1）    int n, start;    cin &gt;&gt; n &gt;&gt; start;    vector&lt;vector<int>&gt; Graph(n, vector<int>(n, 0));    &#x2F;&#x2F; 输入图    for (int i &#x3D; 0; i &lt; n; i++)        for (int j &#x3D; 0; j &lt; n; j++)            cin &gt;&gt; Graph[i][j];    &#x2F;&#x2F; 计算    vector<int> ret &#x3D; Dijkstra(Graph, start);    &#x2F;&#x2F; 输出    for (int i &#x3D; 0; i &lt; ret.size(); i++)        cout &lt;&lt; i &lt;&lt; “ “ &lt;&lt; ret[i] &lt;&lt; endl;    return 0;}C++</p>
 <p>​		C++相比 C，增加多许多类型安全的功能，比如强制类型转换</p>
 <p>​		C++支持范式编程，比如模板类、函数模板等</p>
 <h2 id="2-static关键字"><a href="#2-static关键字" class="headerlink" title="2. static关键字"></a>2. static关键字</h2><ol>
@@ -3150,7 +3150,7 @@ public:
 &#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="4-复原-IP-地址"><a href="#4-复原-IP-地址" class="headerlink" title="4. 复原 IP 地址"></a>4. 复原 IP 地址</h3><p>有效 IP 地址 正好由四个整数（每个整数位于 0 到 255 之间组成，且不能含有前导 0），整数之间用 ‘.’ 分隔。</p>
-<p>例如：”0.1.2.201” 和 “192.168.1.1” 是 有效 IP 地址，但是 “0.011.255.245”、”192.168.1.312” 和 “<a href="mailto:&#x31;&#57;&#50;&#x2e;&#49;&#x36;&#x38;&#64;&#49;&#46;&#x31;">&#x31;&#57;&#50;&#x2e;&#49;&#x36;&#x38;&#64;&#49;&#46;&#x31;</a>“ 是 无效 IP 地址。<br>给定一个只包含数字的字符串 s ，用以表示一个 IP 地址，返回所有可能的有效 IP 地址，这些地址可以通过在 s 中插入 ‘.’ 来形成。你 不能 重新排序或删除 s 中的任何数字。你可以按 任何 顺序返回答案。</p>
+<p>例如：”0.1.2.201” 和 “192.168.1.1” 是 有效 IP 地址，但是 “0.011.255.245”、”192.168.1.312” 和 “<a href="mailto:&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#x40;&#49;&#x2e;&#x31;">&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#x40;&#49;&#x2e;&#x31;</a>“ 是 无效 IP 地址。<br>给定一个只包含数字的字符串 s ，用以表示一个 IP 地址，返回所有可能的有效 IP 地址，这些地址可以通过在 s 中插入 ‘.’ 来形成。你 不能 重新排序或删除 s 中的任何数字。你可以按 任何 顺序返回答案。</p>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">class Solution &#123;
 public:
     vector&lt;string&gt; ret;
@@ -4835,6 +4835,10 @@ RAII的核心思想是将资源或者状态与对象的生命周期绑定，通�
                         <span class="chip bg-color">学习</span>
                     </a>
                     
+                    <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">网络</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -5089,7 +5093,7 @@ find /path/to/search -type f
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">62.4k</span>
+                        class="white-color">62.3k</span>
             
             
             
