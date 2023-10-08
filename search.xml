@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>DTS之间的关系</title>
-    <url>/2023/10/08/dts-zhi-jian-de-guan-xi/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>I帧、P帧、B帧、GOP、IDR 和PTS, DTS之间的关系</title>
     <url>/2023/10/07/i-zheng-p-zheng-b-zheng-gop-idr-pts-dts/</url>
     <content><![CDATA[<h3 id="一-视频传输原理"><a href="#一-视频传输原理" class="headerlink" title="一.视频传输原理"></a>一.视频传输原理</h3><p>视频是利用人眼视觉暂留的原理，通过播放一系列的图片，使人眼产生运动的感觉。单纯传输视频画面，视频量非常大，对现有的网络和存储来说是不可接受的。为了能够使视频便于传输和存储，人们发现视频有大量重复的信息，如果将重复信息在发送端去掉，在接收端恢复出来，这样就大大减少了视频数据的文件，因此有了H.264视频压缩标准。</p>
