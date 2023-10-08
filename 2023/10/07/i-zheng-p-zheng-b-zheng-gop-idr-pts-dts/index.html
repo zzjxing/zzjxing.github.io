@@ -524,14 +524,14 @@
 <p> I P B B P B B </p>
 </blockquote>
 <p>这时候去解码，也是按照收到的视频流一帧一帧去解的了，接收一帧解码一帧，因为在编码的时候已经按照 I、B、P 的依赖关系编好了，接收到数据直接解码就好了。那么解码顺序是：</p>
-<pre class="line-numbers language-none"><code class="language-none">I P B B P B B
-1 2 3 4 5 6 7: DTS
-1 4 2 3 7 5 6: PTS<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">     I P B B P B B
+DTS：1 2 3 4 5 6 7
+PTS：1 4 2 3 7 5 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>可以看到解码出来对应的 PTS 不是顺序的，为了正确显示视频流，这时候我们就必须按照 PTS 重新调整解码后的 frame(帧)，即</p>
-<pre class="line-numbers language-none"><code class="language-none">I B B P B B P
-1 3 4 2 6 7 5: DTS
-1 2 3 4 5 6 7: PTS<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">     I B B P B B P
+DTS：1 3 4 2 6 7 5
+PTS：1 2 3 4 5 6 7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>另外，并不是一定要使用B帧。在实时互动直播系统中，很少使用B帧。主要的原因是压缩和解码B帧时，由于要双向参考，所以它需要缓冲更多的数据，且使用的CPU也会更高。由于实时性的要求，所以一般不使用它。不过对于播放器来说，遇到带有B帧的H264数据是常有的事儿。在没有B帧的情况下，存放帧的顺序和显示帧的顺序就是一样的，PTS和DTS的值也是一样的。</p>
 
