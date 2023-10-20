@@ -114,6 +114,65 @@ PTS：1 2 3 4 5 6 7<span aria-hidden="true" class="line-numbers-rows"><span></sp
       </tags>
   </entry>
   <entry>
+    <title>URL 和 URI 的区别</title>
+    <url>/2023/09/07/url-he-uri-de-qu-bie/</url>
+    <content><![CDATA[<h3 id="一、URI-统一资源标识符"><a href="#一、URI-统一资源标识符" class="headerlink" title="一、URI-统一资源标识符"></a>一、URI-统一资源标识符</h3><p>URI 全称 Uniform Resource Identifier,指的是统一资源标识符，用来标识唯一的资源。<br>Web 上可用的每种资源-HTML 文档、图像、视频片段、程序等都由一个通用资源标识符(即 URI)进行定位。</p>
+<span id="more"></span>
+
+<p>URI 一般由三部分组成：</p>
+<ul>
+<li>&nbsp;int main(){    // n:节点数量 start：起点（0~n-1）    int n, start;    cin &gt;&gt; n &gt;&gt; start;    vector&lt;vector<int>&gt; Graph(n, vector<int>(n, 0));    // 输入图    for (int i = 0; i &lt; n; i++)        for (int j = 0; j &lt; n; j++)            cin &gt;&gt; Graph[i][j];    // 计算    vector<int> ret = Dijkstra(Graph, start);    // 输出    for (int i = 0; i &lt; ret.size(); i++)        cout &lt;&lt; i &lt;&lt; “ “ &lt;&lt; ret[i] &lt;&lt; endl;    return 0;}C++</int></int></int></li>
+<li>2.存放资源的主机名</li>
+<li>3.资源自身的名称，由路径表示</li>
+</ul>
+<p>看个例子：<a href="http://www.xxx.com/html/html4">http://www.xxx.com/html/html4</a><br>这个 URi 是这样的：这是一个通过 HTTP 协议访问的资源，位于<a href="http://www.xxx.com上,通过路径" html="" html4%22%e8%ae%bf%e9%97%ae%e3%80%82"="">www.xxx.com上，通过路径"/html/html4"访问。</a><br>有的 URI 指向一个资源的内部。这种 URi 以”#”结束，并跟着一个 anchor 标识符（称为片段标识符）。例如，下面是一个指向 section_2 的 URI：<a href="http://somesite.com/html/top.htm#section_2">http://somesite.com/html/top.htm#section_2</a></p>
+<h4 id="1-1-绝对-URI"><a href="#1-1-绝对-URI" class="headerlink" title="1.1 绝对 URI"></a>1.1 绝对 URI</h4><p>URI 有绝对和相对之分，绝对的 URI 指以 scheme（后面跟着冒号）开头的 URI。前面提到的<a href="http://www.cnn.com就是绝对的/">http://www.cnn.com就是绝对的</a> URI 的一个例子，其它的例子还有mailto:<a href="mailto:jeff@javajeff.com">jeff@javajeff.com</a>、news:comp.lang.java.help和xyz://whatever。你可以把绝对的 URI 看作是以某种方式引用某种资源，而这种方式对标识符出现的环境没有依赖。如果使用文件系统作类比，绝对的 URI 类似于从根目录开始的某个文件的径。</p>
+<h4 id="1-2-相对-URI"><a href="#1-2-相对-URI" class="headerlink" title="1.2 相对 URI"></a>1.2 相对 URI</h4><p>相对 URI 不包含任何命名规范信息。它的路径通常指同一台机器上的资源。相对 URI 可能含有相对路径（如，”..”表示上一层路径），还可能包含片段标识符。比如看下面的例子：</p>
+<ul>
+<li>相对 URI：<ul>
+<li>suppliers.html</li>
+<li>它扩展成完全的 URI 就是<a href="http://www.xxx.com/suppliers.htm">http://www.xxx.com/suppliers.htm</a></li>
+</ul>
+</li>
+<li>一个图形的相对 URI<ul>
+<li><img src="../icons/logo.png" alt="logo"></li>
+<li>它扩展成完全的 URI 就是<a href="http://www.xxx.com/icons/logo.png">http://www.xxx.com/icons/logo.png</a></li>
+</ul>
+</li>
+</ul>
+<p>与绝对的 URI 不同的，相对的 URI 不是以 scheme（后面跟着冒号）开始的 URI。 它的一个例子是articles/articles.html。你可以把相对的 URI 看作是以某种方式引用某种资源，而这种方式依赖于标识符出现的环境。如果用文件系统作类比，相对的 URI 类似于从当前目录开始的文件路径。</p>
+<h4 id="1-3-URI-的用途"><a href="#1-3-URI-的用途" class="headerlink" title="1.3 URI 的用途"></a>1.3 URI 的用途</h4><p>在 HTML 中，URI 被用来：</p>
+<ol>
+<li>链接到另一个文档或资源</li>
+<li>链接到一个外部样式表或脚本</li>
+<li>在页内包含图形、对象或 applet</li>
+<li>建立图像映射</li>
+<li>提交一个表单</li>
+<li>建立一个框架文档</li>
+<li>引用一个外部参考</li>
+<li>指向一个描述文档的 metadata</li>
+</ol>
+<h3 id="二、URL-统一资源定位器"><a href="#二、URL-统一资源定位器" class="headerlink" title="二、URL-统一资源定位器"></a>二、URL-统一资源定位器</h3><p>URL 全称是 Uniform Resource Locator,指的是统一资源定位器,它是一种具体的 URI，即 URL 可以用来标识一个资源，而且还指明了如何 locate 这个资源。通俗地说，URL 是 Internet 上用来描述资源的字符串，主要用在各种 www 客户端和服务器程序是，特别是著名的 Mosaic。采用 URL 可以用一种统一的格式来描述各种信息资源，包括文件、服务器的地址和目录等。<br>URL 的第一个部分 http://表示要访问的文件的类型。在网上，这几乎总是使用 http（超文本传输协议，hypertext transfer protocol-用来转换网页的协议）；有时也使用 ftp（文件传输协议，file transfer protocol-用来传输软件和大文件；telnet（远程登录），主要用于远程交谈以及文件调用等，意思是浏览器正在阅读本地盘外的一个文件而不是一个远程计算机。</p>
+<h4 id="2-1-URL-组成"><a href="#2-1-URL-组成" class="headerlink" title="2.1 URL 组成"></a>2.1 URL 组成</h4><ol>
+<li>Internet 资源类型（schema）：指出 www 客户程序用来操作的工具。如http://表示 www 服务器，ftp://表示 ftp 服务器，gopher://表示 Gopher 服务器，而new:表示 Newgroup 新闻组。必需的。</li>
+<li>服务器地址（host）：指出 www 网页所在的服务器域名。必需的。</li>
+<li>端口（port）：有时（并非总是这样），对某些资源的访问来说，需给出相应的服务器提供端口。可选的。</li>
+<li>路径（path）：指明服务器上某资源的位置。与端口一样，路径并非总是需要的。可选的。</li>
+</ol>
+<p>URL 地址格式排列为：schema://host:port/path<br>必须注意：www 上的服务器都是区分大小写的，所以千万要注意正确的 URL 大小写表达形式。</p>
+<h3 id="三、URN-统一资源名称"><a href="#三、URN-统一资源名称" class="headerlink" title="三、URN-统一资源名称"></a>三、URN-统一资源名称</h3><p>URN,全称 Uniform Resource Name,指的是统一资源命名,是通过名字来标识资源。比如mailto:<a href="mailto:java-net@java.sun.com">java-net@java.sun.com</a><br>URN 是 URL 的一种更新形式，统一资源名称(URN, Uniform Resource Name)不依赖于位置，并且有可能减少失效连接的个数。</p>
+<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>URI: Uniform Resource Identifier 指的是统一资源标识符<br>URL: Uniform Resource Location 指的是统一资源定位符<br>URN: Universal Resource Name 指的是统一资源名称<br>URI 指的是统一资源标识符，用唯一的标识来确定一个资源，它是一种抽象的定义，也就是说，不管使用什么方法来定义，只要能唯一的标识一个资源，就可以称为 URI。它是以某种统一的(标准化的)方式标识资源的简单字符串。<br>URL 和 URN 是 URI 的子集，URL 可以理解为使用地址来标识资源，URN 可以理解为使用名称来标识资源。<br>Web 上地址的基本形式是 URI，它代表统一资源标识符,有两种形式</p>
+<ul>
+<li>URL:目前 URI 的最普遍的形式就是无处不在的 URL 或统一资源定位器</li>
+<li>URN:URL 的一种更新形式，统一资源名称不依赖于位置，并且有可能减少失效链接的个数。但是其流行还需要时间，因为它需要更精密软件的支持。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>go 中json格式说明</title>
     <url>/2023/08/04/go-zhong-json-ge-shi-shuo-ming/</url>
     <content><![CDATA[<p>本文基于<a href="https://go.p2hp.com/go.dev/blog/json">Go官方文档</a>和<a href="https://sanyuesha.com/2018/05/07/go-json/">理解 Go 中的 JSON</a>整理 </p>
@@ -402,177 +461,6 @@ err <span class="token operator">:=</span> json<span class="token punctuation">.
       </tags>
   </entry>
   <entry>
-    <title>URL 和 URI 的区别</title>
-    <url>/2023/09/07/url-he-uri-de-qu-bie/</url>
-    <content><![CDATA[<h3 id="一、URI-统一资源标识符"><a href="#一、URI-统一资源标识符" class="headerlink" title="一、URI-统一资源标识符"></a>一、URI-统一资源标识符</h3><p>URI 全称 Uniform Resource Identifier,指的是统一资源标识符，用来标识唯一的资源。<br>Web 上可用的每种资源-HTML 文档、图像、视频片段、程序等都由一个通用资源标识符(即 URI)进行定位。</p>
-<span id="more"></span>
-
-<p>URI 一般由三部分组成：</p>
-<ul>
-<li>&nbsp;int main(){    // n:节点数量 start：起点（0~n-1）    int n, start;    cin &gt;&gt; n &gt;&gt; start;    vector&lt;vector<int>&gt; Graph(n, vector<int>(n, 0));    // 输入图    for (int i = 0; i &lt; n; i++)        for (int j = 0; j &lt; n; j++)            cin &gt;&gt; Graph[i][j];    // 计算    vector<int> ret = Dijkstra(Graph, start);    // 输出    for (int i = 0; i &lt; ret.size(); i++)        cout &lt;&lt; i &lt;&lt; “ “ &lt;&lt; ret[i] &lt;&lt; endl;    return 0;}C++</int></int></int></li>
-<li>2.存放资源的主机名</li>
-<li>3.资源自身的名称，由路径表示</li>
-</ul>
-<p>看个例子：<a href="http://www.xxx.com/html/html4">http://www.xxx.com/html/html4</a><br>这个 URi 是这样的：这是一个通过 HTTP 协议访问的资源，位于<a href="http://www.xxx.com上,通过路径" html="" html4%22%e8%ae%bf%e9%97%ae%e3%80%82"="">www.xxx.com上，通过路径"/html/html4"访问。</a><br>有的 URI 指向一个资源的内部。这种 URi 以”#”结束，并跟着一个 anchor 标识符（称为片段标识符）。例如，下面是一个指向 section_2 的 URI：<a href="http://somesite.com/html/top.htm#section_2">http://somesite.com/html/top.htm#section_2</a></p>
-<h4 id="1-1-绝对-URI"><a href="#1-1-绝对-URI" class="headerlink" title="1.1 绝对 URI"></a>1.1 绝对 URI</h4><p>URI 有绝对和相对之分，绝对的 URI 指以 scheme（后面跟着冒号）开头的 URI。前面提到的<a href="http://www.cnn.com就是绝对的/">http://www.cnn.com就是绝对的</a> URI 的一个例子，其它的例子还有mailto:<a href="mailto:jeff@javajeff.com">jeff@javajeff.com</a>、news:comp.lang.java.help和xyz://whatever。你可以把绝对的 URI 看作是以某种方式引用某种资源，而这种方式对标识符出现的环境没有依赖。如果使用文件系统作类比，绝对的 URI 类似于从根目录开始的某个文件的径。</p>
-<h4 id="1-2-相对-URI"><a href="#1-2-相对-URI" class="headerlink" title="1.2 相对 URI"></a>1.2 相对 URI</h4><p>相对 URI 不包含任何命名规范信息。它的路径通常指同一台机器上的资源。相对 URI 可能含有相对路径（如，”..”表示上一层路径），还可能包含片段标识符。比如看下面的例子：</p>
-<ul>
-<li>相对 URI：<ul>
-<li>suppliers.html</li>
-<li>它扩展成完全的 URI 就是<a href="http://www.xxx.com/suppliers.htm">http://www.xxx.com/suppliers.htm</a></li>
-</ul>
-</li>
-<li>一个图形的相对 URI<ul>
-<li><img src="../icons/logo.png" alt="logo"></li>
-<li>它扩展成完全的 URI 就是<a href="http://www.xxx.com/icons/logo.png">http://www.xxx.com/icons/logo.png</a></li>
-</ul>
-</li>
-</ul>
-<p>与绝对的 URI 不同的，相对的 URI 不是以 scheme（后面跟着冒号）开始的 URI。 它的一个例子是articles/articles.html。你可以把相对的 URI 看作是以某种方式引用某种资源，而这种方式依赖于标识符出现的环境。如果用文件系统作类比，相对的 URI 类似于从当前目录开始的文件路径。</p>
-<h4 id="1-3-URI-的用途"><a href="#1-3-URI-的用途" class="headerlink" title="1.3 URI 的用途"></a>1.3 URI 的用途</h4><p>在 HTML 中，URI 被用来：</p>
-<ol>
-<li>链接到另一个文档或资源</li>
-<li>链接到一个外部样式表或脚本</li>
-<li>在页内包含图形、对象或 applet</li>
-<li>建立图像映射</li>
-<li>提交一个表单</li>
-<li>建立一个框架文档</li>
-<li>引用一个外部参考</li>
-<li>指向一个描述文档的 metadata</li>
-</ol>
-<h3 id="二、URL-统一资源定位器"><a href="#二、URL-统一资源定位器" class="headerlink" title="二、URL-统一资源定位器"></a>二、URL-统一资源定位器</h3><p>URL 全称是 Uniform Resource Locator,指的是统一资源定位器,它是一种具体的 URI，即 URL 可以用来标识一个资源，而且还指明了如何 locate 这个资源。通俗地说，URL 是 Internet 上用来描述资源的字符串，主要用在各种 www 客户端和服务器程序是，特别是著名的 Mosaic。采用 URL 可以用一种统一的格式来描述各种信息资源，包括文件、服务器的地址和目录等。<br>URL 的第一个部分 http://表示要访问的文件的类型。在网上，这几乎总是使用 http（超文本传输协议，hypertext transfer protocol-用来转换网页的协议）；有时也使用 ftp（文件传输协议，file transfer protocol-用来传输软件和大文件；telnet（远程登录），主要用于远程交谈以及文件调用等，意思是浏览器正在阅读本地盘外的一个文件而不是一个远程计算机。</p>
-<h4 id="2-1-URL-组成"><a href="#2-1-URL-组成" class="headerlink" title="2.1 URL 组成"></a>2.1 URL 组成</h4><ol>
-<li>Internet 资源类型（schema）：指出 www 客户程序用来操作的工具。如http://表示 www 服务器，ftp://表示 ftp 服务器，gopher://表示 Gopher 服务器，而new:表示 Newgroup 新闻组。必需的。</li>
-<li>服务器地址（host）：指出 www 网页所在的服务器域名。必需的。</li>
-<li>端口（port）：有时（并非总是这样），对某些资源的访问来说，需给出相应的服务器提供端口。可选的。</li>
-<li>路径（path）：指明服务器上某资源的位置。与端口一样，路径并非总是需要的。可选的。</li>
-</ol>
-<p>URL 地址格式排列为：schema://host:port/path<br>必须注意：www 上的服务器都是区分大小写的，所以千万要注意正确的 URL 大小写表达形式。</p>
-<h3 id="三、URN-统一资源名称"><a href="#三、URN-统一资源名称" class="headerlink" title="三、URN-统一资源名称"></a>三、URN-统一资源名称</h3><p>URN,全称 Uniform Resource Name,指的是统一资源命名,是通过名字来标识资源。比如mailto:<a href="mailto:java-net@java.sun.com">java-net@java.sun.com</a><br>URN 是 URL 的一种更新形式，统一资源名称(URN, Uniform Resource Name)不依赖于位置，并且有可能减少失效连接的个数。</p>
-<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>URI: Uniform Resource Identifier 指的是统一资源标识符<br>URL: Uniform Resource Location 指的是统一资源定位符<br>URN: Universal Resource Name 指的是统一资源名称<br>URI 指的是统一资源标识符，用唯一的标识来确定一个资源，它是一种抽象的定义，也就是说，不管使用什么方法来定义，只要能唯一的标识一个资源，就可以称为 URI。它是以某种统一的(标准化的)方式标识资源的简单字符串。<br>URL 和 URN 是 URI 的子集，URL 可以理解为使用地址来标识资源，URN 可以理解为使用名称来标识资源。<br>Web 上地址的基本形式是 URI，它代表统一资源标识符,有两种形式</p>
-<ul>
-<li>URL:目前 URI 的最普遍的形式就是无处不在的 URL 或统一资源定位器</li>
-<li>URN:URL 的一种更新形式，统一资源名称不依赖于位置，并且有可能减少失效链接的个数。但是其流行还需要时间，因为它需要更精密软件的支持。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux 常用命令</title>
-    <url>/2023/08/04/linux-chang-yong-ming-ling/</url>
-    <content><![CDATA[<p>用于记录linux中比较有用的命令</p>
-<h2 id="查找文件find"><a href="#查找文件find" class="headerlink" title="查找文件find"></a>查找文件<code>find</code></h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查找指定文件名的文件：</span>
-<span class="token function">find</span> /path/to/search <span class="token parameter variable">-name</span> <span class="token string">"filename"</span>
-<span class="token comment"># 查找指定类型的文件：</span>
-<span class="token function">find</span> /path/to/search <span class="token parameter variable">-type</span> f  <span class="token comment"># 查找普通文件</span>
-<span class="token function">find</span> /path/to/search <span class="token parameter variable">-type</span> d  <span class="token comment"># 查找目录</span>
-<span class="token function">find</span> /path/to/search <span class="token parameter variable">-type</span> l  <span class="token comment"># 查找符号链接</span>
-<span class="token comment"># 查找文件名包含特定字符串的文件：</span>
-<span class="token function">find</span> /path/to/search <span class="token parameter variable">-name</span> <span class="token string">"*substring*"</span>
-<span class="token comment"># 按照文件大小进行查找：</span>
-<span class="token function">find</span> /path/to/search <span class="token parameter variable">-size</span> +10M  <span class="token comment"># 查找大小大于10MB的文件</span>
-<span class="token function">find</span> /path/to/search <span class="token parameter variable">-size</span> <span class="token parameter variable">-5M</span>   <span class="token comment"># 查找大小小于5MB的文件</span>
-<span class="token comment"># 按照文件权限进行查找：</span>
-<span class="token function">find</span> /path/to/search <span class="token parameter variable">-perm</span> <span class="token number">644</span>  <span class="token comment"># 查找文件权限为644的文件</span>
-<span class="token comment"># 在特定时间范围内查找文件：</span>
-<span class="token function">find</span> /path/to/search <span class="token parameter variable">-mtime</span> +7  <span class="token comment"># 查找修改时间在7天之前的文件</span>
-<span class="token function">find</span> /path/to/search <span class="token parameter variable">-mtime</span> <span class="token parameter variable">-3</span>  <span class="token comment"># 查找修改时间在3天之内的文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<span id="more"></span>
-<h2 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a><code>whereis</code></h2><p><code>whereis</code> 是一个 Linux 命令，用于在特定的目录中搜索可执行文件、源代码文件以及帮助文件。它比较适合用于查找系统命令或系统软件的位置。<br>基本语法：</p>
-<pre class="line-numbers language-none"><code class="language-none">whereis [options] &lt;filename&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>其中：</p>
-<ul>
-<li><code>filename</code> 是要查找的文件名或命令名称。</li>
-</ul>
-<p><code>whereis</code> 命令会在一些默认的目录中查找文件，通常包括 <code>/bin</code>、<code>/sbin</code>、<code>/usr/bin</code>、<code>/usr/sbin</code> 等。它不会查找用户的自定义目录。</p>
-<p>以下是一些常用的 <code>whereis</code> 命令示例：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查找命令的位置：</span>
-<span class="token function">whereis</span> <span class="token function">ls</span>
-<span class="token comment"># 查找可执行文件的位置</span>
-<span class="token function">whereis</span> gcc
-<span class="token comment"># 查找源代码文件的位置：</span>
-<span class="token function">whereis</span> python
-<span class="token comment"># 查找帮助文件的位置：</span>
-<span class="token function">whereis</span> <span class="token function">grep</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><code>whereis</code> 命令会输出查找到的文件路径。如果某个文件不存在或未找到，它会在输出中显示对应的信息。<br>需要注意的是，<code>whereis</code> 命令仅用于查找可执行文件、源代码文件和帮助文件，不适用于查找其他类型的文件。如果你需要查找普通文件，可以使用 <code>find</code> 命令。</p>
-<h2 id="top"><a href="#top" class="headerlink" title="top"></a><code>top</code></h2><p><code>top</code>命令用于实时监视系统的资源使用情况和运行中的进程。top会持续地显示当前的系统状态，并根据CPU、内存、进程等指标进行排序。以下是<code>top</code>命令的一些常用参数：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">top</span> <span class="token parameter variable">-b</span> 		<span class="token comment"># 以批处理模式运行top，直接输出到标准输出而非交互式显示。</span>
-<span class="token function">top</span> <span class="token parameter variable">-c</span> 		<span class="token comment"># 显示完整的命令行，而不截断显示。</span>
-<span class="token function">top</span> <span class="token parameter variable">-H</span> 		<span class="token comment"># 在显示进程时，显示所有线程而不是仅显示主线程。</span>
-<span class="token function">top</span> <span class="token parameter variable">-i</span> 		<span class="token comment"># 关闭空闲的进程显示，仅显示活动进程。</span>
-<span class="token function">top</span> <span class="token parameter variable">-d</span> delay 				<span class="token comment"># 指定刷新频率，以秒为单位。例如，top -d 5表示每5秒刷新一次。</span>
-<span class="token function">top</span> <span class="token parameter variable">-n</span> iterations 	<span class="token comment"># 指定显示的迭代次数，即显示多少次后自动退出。例如，top -n 10表示显示10次后自动退出。</span>
-<span class="token function">top</span> <span class="token parameter variable">-p</span> PID 					<span class="token comment"># 指定要监视的特定进程ID。</span>
-<span class="token function">top</span> <span class="token parameter variable">-U</span> username 		<span class="token comment"># 只显示指定用户名的进程。</span>
-<span class="token function">top</span> <span class="token parameter variable">-u</span> username 		<span class="token comment"># 只显示指定用户名或用户ID的进程。</span>
-<span class="token function">top</span> <span class="token parameter variable">-s</span> field 				<span class="token comment"># 按指定字段对进程进行排序。常用的排序字段有pid（按PID排序）、cpu（按CPU使用率排序）、mem（按内存使用率排序）等。</span>
-<span class="token function">top</span> <span class="token parameter variable">-o</span> key 					<span class="token comment"># 以逗号分隔的格式指定要显示的字段。例如，top -o pid,cpu,mem将只显示进程的PID、CPU使用率和内存使用率。</span>
-<span class="token function">top</span> <span class="token parameter variable">--batch</span> 				<span class="token comment"># 批处理模式下输出到标准输出，通常与-n选项一起使用。</span>
-<span class="token function">top</span> <span class="token parameter variable">--version</span> 			<span class="token comment"># 显示 top 命令的版本信息。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="为普通用户添加docker权限"><a href="#为普通用户添加docker权限" class="headerlink" title="为普通用户添加docker权限"></a>为普通用户添加docker权限</h2><p>官方文档权限介绍:</p>
-<blockquote>
-<p>The Docker daemon binds to a Unix socket instead of a TCP port. By default that Unix socket is owned by the user <code>root</code> and other users can only access it using <code>sudo</code>. The Docker daemon always runs as the <code>root</code> user.<br>If you don’t want to preface the docker command with sudo, create a Unix group called docker and add users to it. When the Docker daemon starts, it creates a Unix socket accessible by members of the docker group.</p>
-</blockquote>
-<ol>
-<li><p>检查是否存在 docker 用户组</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> /etc/group <span class="token operator">|</span> <span class="token function">grep</span> <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>如果出现docker就不用添加</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">groupadd</span> <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>把普通用户添加docker用户组</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpasswd <span class="token parameter variable">-a</span> 普通用户名 <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>重启docker（也可以不用重启，自己尝试普通用户能否使用就可以了）</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl restart <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>更新用户组</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">newgrp <span class="token function">docker</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ol>
-<h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><p><code>curl</code> 是一个在命令行下用来发送 HTTP 请求的工具和库，它支持多种协议，包括 HTTP、HTTPS、FTP 等，以及多种数据格式。<code>curl</code> 命令通常用于从终端或脚本中发送 HTTP 请求，获取和显示服务器的响应数据。</p>
-<p>以下是一些 <code>curl</code> 命令的常见用法和示例：</p>
-<ol>
-<li><p>发送 GET 请求并输出响应：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>发送 POST 请求并附带数据：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token parameter variable">-d</span> <span class="token string">"key1=value1&amp;key2=value2"</span> https://example.com/api<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>发送 JSON 数据作为 POST 请求体：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/json"</span> <span class="token parameter variable">-d</span> <span class="token string">'{"key1":"value1","key2":"value2"}'</span> https://example.com/api<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>发送文件作为 POST 请求体：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token parameter variable">-F</span> <span class="token string">"file=@path/to/file.txt"</span> https://example.com/upload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>下载文件：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-o</span> output.txt https://example.com/file.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>发送请求并显示详细的传输信息（包括请求头、响应头、传输速度等）：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-v</span> https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>发送请求并保存响应头到文件：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-D</span> headers.txt https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>发送请求并仅显示响应头部信息：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-I</span> https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>发送请求并仅显示响应的 HTTP 状态码：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-w</span> <span class="token string">"%{http_code}<span class="token entity" title="\n">\n</span>"</span> <span class="token parameter variable">-o</span> /dev/null <span class="token parameter variable">-s</span> https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>使用代理服务器发送请求：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-x</span> proxy_server:proxy_port https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-</ol>
-<p>这些只是 <code>curl</code> 命令的一些常见用法，它可以根据不同的需求进行更多的配置和定制。通过 <code>man curl</code> 命令可以查看完整的 <code>curl</code> 命令手册，了解更多参数和选项的用法。</p>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>代码</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>go 常用工具库</title>
     <url>/2023/08/04/go-chang-yong-gong-ju-ku/</url>
     <content><![CDATA[<h2 id="sjson"><a href="#sjson" class="headerlink" title="sjson"></a>sjson</h2><p>在 Go 语言中，<code>sjson</code> 是一个用于修改 JSON 字符串的库。它提供了简单的 API，可以在不解析整个 JSON 的情况下，直接修改其中的某个字段的值或者添加新的字段。<br><code>github.com/tidwall/sjson</code> 是一个非常轻量级的 JSON 操作库，可以在不需要完全解析 JSON 的情况下，直接修改 JSON 字符串的特定部分。相比于传统的 JSON 操作库，<code>sjson</code> 的性能更高，因为它不需要将整个 JSON 字符串解析成对象再进行修改，而是直接在字符串层级上进行修改。<br>使用 <code>sjson</code> 可以非常方便地实现 JSON 字符串的修改，</p>
@@ -819,6 +707,127 @@ go run main.go -vmodule=module1=2,module2=3<span aria-hidden="true" class="line-
         <tag>学习</tag>
         <tag>go</tag>
         <tag>代码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux 常用命令</title>
+    <url>/2023/08/04/linux-chang-yong-ming-ling/</url>
+    <content><![CDATA[<p>用于记录linux中比较有用的命令</p>
+<h2 id="查找文件find"><a href="#查找文件find" class="headerlink" title="查找文件find"></a>查找文件<code>find</code></h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查找指定文件名的文件：</span>
+<span class="token function">find</span> /path/to/search <span class="token parameter variable">-name</span> <span class="token string">"filename"</span>
+<span class="token comment"># 查找指定类型的文件：</span>
+<span class="token function">find</span> /path/to/search <span class="token parameter variable">-type</span> f  <span class="token comment"># 查找普通文件</span>
+<span class="token function">find</span> /path/to/search <span class="token parameter variable">-type</span> d  <span class="token comment"># 查找目录</span>
+<span class="token function">find</span> /path/to/search <span class="token parameter variable">-type</span> l  <span class="token comment"># 查找符号链接</span>
+<span class="token comment"># 查找文件名包含特定字符串的文件：</span>
+<span class="token function">find</span> /path/to/search <span class="token parameter variable">-name</span> <span class="token string">"*substring*"</span>
+<span class="token comment"># 按照文件大小进行查找：</span>
+<span class="token function">find</span> /path/to/search <span class="token parameter variable">-size</span> +10M  <span class="token comment"># 查找大小大于10MB的文件</span>
+<span class="token function">find</span> /path/to/search <span class="token parameter variable">-size</span> <span class="token parameter variable">-5M</span>   <span class="token comment"># 查找大小小于5MB的文件</span>
+<span class="token comment"># 按照文件权限进行查找：</span>
+<span class="token function">find</span> /path/to/search <span class="token parameter variable">-perm</span> <span class="token number">644</span>  <span class="token comment"># 查找文件权限为644的文件</span>
+<span class="token comment"># 在特定时间范围内查找文件：</span>
+<span class="token function">find</span> /path/to/search <span class="token parameter variable">-mtime</span> +7  <span class="token comment"># 查找修改时间在7天之前的文件</span>
+<span class="token function">find</span> /path/to/search <span class="token parameter variable">-mtime</span> <span class="token parameter variable">-3</span>  <span class="token comment"># 查找修改时间在3天之内的文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span id="more"></span>
+<h2 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a><code>whereis</code></h2><p><code>whereis</code> 是一个 Linux 命令，用于在特定的目录中搜索可执行文件、源代码文件以及帮助文件。它比较适合用于查找系统命令或系统软件的位置。<br>基本语法：</p>
+<pre class="line-numbers language-none"><code class="language-none">whereis [options] &lt;filename&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>其中：</p>
+<ul>
+<li><code>filename</code> 是要查找的文件名或命令名称。</li>
+</ul>
+<p><code>whereis</code> 命令会在一些默认的目录中查找文件，通常包括 <code>/bin</code>、<code>/sbin</code>、<code>/usr/bin</code>、<code>/usr/sbin</code> 等。它不会查找用户的自定义目录。</p>
+<p>以下是一些常用的 <code>whereis</code> 命令示例：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查找命令的位置：</span>
+<span class="token function">whereis</span> <span class="token function">ls</span>
+<span class="token comment"># 查找可执行文件的位置</span>
+<span class="token function">whereis</span> gcc
+<span class="token comment"># 查找源代码文件的位置：</span>
+<span class="token function">whereis</span> python
+<span class="token comment"># 查找帮助文件的位置：</span>
+<span class="token function">whereis</span> <span class="token function">grep</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>whereis</code> 命令会输出查找到的文件路径。如果某个文件不存在或未找到，它会在输出中显示对应的信息。<br>需要注意的是，<code>whereis</code> 命令仅用于查找可执行文件、源代码文件和帮助文件，不适用于查找其他类型的文件。如果你需要查找普通文件，可以使用 <code>find</code> 命令。</p>
+<h2 id="top"><a href="#top" class="headerlink" title="top"></a><code>top</code></h2><p><code>top</code>命令用于实时监视系统的资源使用情况和运行中的进程。top会持续地显示当前的系统状态，并根据CPU、内存、进程等指标进行排序。以下是<code>top</code>命令的一些常用参数：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">top</span> <span class="token parameter variable">-b</span> 		<span class="token comment"># 以批处理模式运行top，直接输出到标准输出而非交互式显示。</span>
+<span class="token function">top</span> <span class="token parameter variable">-c</span> 		<span class="token comment"># 显示完整的命令行，而不截断显示。</span>
+<span class="token function">top</span> <span class="token parameter variable">-H</span> 		<span class="token comment"># 在显示进程时，显示所有线程而不是仅显示主线程。</span>
+<span class="token function">top</span> <span class="token parameter variable">-i</span> 		<span class="token comment"># 关闭空闲的进程显示，仅显示活动进程。</span>
+<span class="token function">top</span> <span class="token parameter variable">-d</span> delay 				<span class="token comment"># 指定刷新频率，以秒为单位。例如，top -d 5表示每5秒刷新一次。</span>
+<span class="token function">top</span> <span class="token parameter variable">-n</span> iterations 	<span class="token comment"># 指定显示的迭代次数，即显示多少次后自动退出。例如，top -n 10表示显示10次后自动退出。</span>
+<span class="token function">top</span> <span class="token parameter variable">-p</span> PID 					<span class="token comment"># 指定要监视的特定进程ID。</span>
+<span class="token function">top</span> <span class="token parameter variable">-U</span> username 		<span class="token comment"># 只显示指定用户名的进程。</span>
+<span class="token function">top</span> <span class="token parameter variable">-u</span> username 		<span class="token comment"># 只显示指定用户名或用户ID的进程。</span>
+<span class="token function">top</span> <span class="token parameter variable">-s</span> field 				<span class="token comment"># 按指定字段对进程进行排序。常用的排序字段有pid（按PID排序）、cpu（按CPU使用率排序）、mem（按内存使用率排序）等。</span>
+<span class="token function">top</span> <span class="token parameter variable">-o</span> key 					<span class="token comment"># 以逗号分隔的格式指定要显示的字段。例如，top -o pid,cpu,mem将只显示进程的PID、CPU使用率和内存使用率。</span>
+<span class="token function">top</span> <span class="token parameter variable">--batch</span> 				<span class="token comment"># 批处理模式下输出到标准输出，通常与-n选项一起使用。</span>
+<span class="token function">top</span> <span class="token parameter variable">--version</span> 			<span class="token comment"># 显示 top 命令的版本信息。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="为普通用户添加docker权限"><a href="#为普通用户添加docker权限" class="headerlink" title="为普通用户添加docker权限"></a>为普通用户添加docker权限</h2><p>官方文档权限介绍:</p>
+<blockquote>
+<p>The Docker daemon binds to a Unix socket instead of a TCP port. By default that Unix socket is owned by the user <code>root</code> and other users can only access it using <code>sudo</code>. The Docker daemon always runs as the <code>root</code> user.<br>If you don’t want to preface the docker command with sudo, create a Unix group called docker and add users to it. When the Docker daemon starts, it creates a Unix socket accessible by members of the docker group.</p>
+</blockquote>
+<ol>
+<li><p>检查是否存在 docker 用户组</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> /etc/group <span class="token operator">|</span> <span class="token function">grep</span> <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果出现docker就不用添加</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">groupadd</span> <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>把普通用户添加docker用户组</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">gpasswd <span class="token parameter variable">-a</span> 普通用户名 <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>重启docker（也可以不用重启，自己尝试普通用户能否使用就可以了）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl restart <span class="token function">docker</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>更新用户组</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">newgrp <span class="token function">docker</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><p><code>curl</code> 是一个在命令行下用来发送 HTTP 请求的工具和库，它支持多种协议，包括 HTTP、HTTPS、FTP 等，以及多种数据格式。<code>curl</code> 命令通常用于从终端或脚本中发送 HTTP 请求，获取和显示服务器的响应数据。</p>
+<p>以下是一些 <code>curl</code> 命令的常见用法和示例：</p>
+<ol>
+<li><p>发送 GET 请求并输出响应：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>发送 POST 请求并附带数据：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token parameter variable">-d</span> <span class="token string">"key1=value1&amp;key2=value2"</span> https://example.com/api<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>发送 JSON 数据作为 POST 请求体：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/json"</span> <span class="token parameter variable">-d</span> <span class="token string">'{"key1":"value1","key2":"value2"}'</span> https://example.com/api<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>发送文件作为 POST 请求体：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token parameter variable">-F</span> <span class="token string">"file=@path/to/file.txt"</span> https://example.com/upload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>下载文件：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-o</span> output.txt https://example.com/file.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>发送请求并显示详细的传输信息（包括请求头、响应头、传输速度等）：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-v</span> https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>发送请求并保存响应头到文件：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-D</span> headers.txt https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>发送请求并仅显示响应头部信息：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-I</span> https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>发送请求并仅显示响应的 HTTP 状态码：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-w</span> <span class="token string">"%{http_code}<span class="token entity" title="\n">\n</span>"</span> <span class="token parameter variable">-o</span> /dev/null <span class="token parameter variable">-s</span> https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>使用代理服务器发送请求：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-x</span> proxy_server:proxy_port https://example.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<p>这些只是 <code>curl</code> 命令的一些常见用法，它可以根据不同的需求进行更多的配置和定制。通过 <code>man curl</code> 命令可以查看完整的 <code>curl</code> 命令手册，了解更多参数和选项的用法。</p>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>代码</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设计模式</title>
+    <url>/2023/10/10/she-ji-mo-shi-md/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>设计模式</tag>
       </tags>
   </entry>
   <entry>
