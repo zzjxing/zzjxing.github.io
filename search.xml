@@ -130,6 +130,39 @@ PTS：1 2 3 4 5 6 7<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <p>​    根据三基色原理，人们发现红绿蓝三种颜色所贡献的亮度是不同的，绿色的“亮度”最大，蓝色最暗，设红色所贡献的亮度的份额为KR，蓝色贡献的份额为KB，那么亮度为:</p>
 <script type="math/tex; mode=display">
 Y=K_R \cdot R+(1-K_R-K_B)\cdot G+K_B\cdot B</script><p>​    根据经验，$K_R=0.299$，<script type="math/tex">K_B=0.114</script>，那么:</p>
+<script type="math/tex; mode=display">
+Y=0.229\cdot R + 0.587\cdot G +0.114\cdot B</script><p>​    蓝色和红色的色差的定义如下:</p>
+<script type="math/tex; mode=display">
+C_b=\frac{1}{2}\cdot \frac{B-Y}{1-K_B}\\
+C_r=\frac{1}{2}\cdot \frac{R-Y}{1-K_R}</script><p>​    最终可以得到RGB转换为YCbCr的数学公式为：</p>
+<script type="math/tex; mode=display">
+Y=0.299\cdot R+0.5870\cdot G + 0.114 \cdot B \\
+C_b=-0.1687\cdot R -0.3313\cdot G+0.5\cdot B \\
+C_r=0.5\cdot R -0.4187\cdot G -0.0813\cdot B</script><p>​     YCbCr模型广泛应用在图片和视频的压缩传输中，比如你可以留意一下电视或者DVD后面的接口，就可以发现色差接口。</p>
+<p><img src="JPEG原理详解/jpeg_14.jpg" alt="img"></p>
+<p>​     这是有道理的，还记得我们在文章开始时提到的有损压缩的基本原理吗？有损压缩首先要做的事情就是“把重要的信息和不重要的信息分开”，YCbCr恰好能做到这一点。对于人眼来说，图像中明暗的变化更容易被感知到，这是由于人眼的构造引起的。视网膜上有两种感光细胞，能够感知亮度变化的视杆细胞，以及能够感知颜色的视锥细胞，由于视杆细胞在数量上远大于视锥细胞，所以我们更容易感知到明暗细节。比如说下面这张图：</p>
+<p><img src="JPEG原理详解/jpeg_15-1699607767615-5.jpg" alt="img"></p>
+<figure>
+<center>
+<img src="JPEG原理详解/jpeg_16.jpg" width="300/">
+<img src="JPEG原理详解/jpeg_17.jpg" width="300/">
+<img src="JPEG原理详解/jpeg_18.jpg" width="300/">
+</center>
+</figure>
+
+<p>​     可以明显看到，亮度图的细节更加丰富。JPEG把图像转换为YCbCr之后，就可以针对数据得重要程度的不同做不同的处理。这就是为什么JPEG使用这种颜色空间的原因。</p>
+<h4 id="步骤三：离散余弦变换"><a href="#步骤三：离散余弦变换" class="headerlink" title="步骤三：离散余弦变换"></a><strong>步骤三：离散余弦变换</strong></h4><pre><code> 这次我们来介绍JPEG算法中的核心内容，离散余弦变换（[Discrete cosine transform](http://en.wikipedia.org/wiki/Discrete_cosine_transform)），简称DCT。
+</code></pre><p>​    离散余弦变换属于<a href="http://en.wikipedia.org/wiki/Fourier_transform">傅里叶变换</a>的另外一种形式，没错，就是大名鼎鼎的傅里叶变换。傅里叶是法国著名的数学家和物理学家，1807年，39岁的傅里叶在他的一篇论文里提出了一个想法，他认为<strong>任何周期性的函数，都可以分解为为一系列的三角函数的组合</strong>，这个想法一开始并没有得到当时科学界的承认，比如当时著名的数学家拉格朗日提出质疑，三角函数无论如何组合，都无法表达带有“尖角”的函数，一直到1822年拉格朗日死后，傅里叶的想法才正式在他的著作《热的解析理论》一书中正式发表。</p>
+<p><img src="JPEG原理详解/jpeg_20.jpg" alt="img"></p>
+<p>​    金子总会闪光，傅里叶变换如今广泛应用于数学、物理、信号处理等等领域，变换除了它在数学上的意义外，还有其哲学上的伟大意义，那就是，世上任何复杂的事物，都可以分解为简单的事物的组合，而这个过程只需要借助数学工具就可以了。但是当年拉格朗日的质疑是正确的，三角函数的确无法表达出尖角形状的函数，不过只要三角函数足够多，可以无限逼近最终结果。比如下面这张动图，就动态描述了一个矩形方波，是如何做傅里叶分析的。</p>
+<figure>
+<center>
+<img src="JPEG原理详解/jpeg_22.jpg" width="440/">
+<img src="JPEG原理详解/jpeg_21.gif" width="400/">
+</center>
+</figure>
+
+<p>​     当我们要处理的不再是函数，而是一堆离散的数据时，并且这些数据是对称的话，那么傅里叶变化出来的函数只含有余弦项，这种变换称为离散余弦变换。举个例子，有一组一维数据$[x_0,x_1,x_2,…,x_{n-1}]$,那么可以通过DCT变换得到n个变换级数$F_i$</p>
 ]]></content>
       <tags>
         <tag>学习</tag>
