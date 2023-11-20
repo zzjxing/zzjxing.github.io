@@ -159,7 +159,28 @@ PTS：1 2 3 4 5 6 7<span aria-hidden="true" class="line-numbers-rows"><span></sp
 </center>
 </figure>
 
-<p>​	 当我们要处理的不再是函数，而是一堆离散的数据时，并且这些数据是对称的话，那么傅里叶变化出来的函数只含有余弦项，这种变换称为离散余弦变换。举个例子，有一组一维数据$[x_0,x_1,x_2,…,x_{n-1}]$,那么可以通过DCT变换得到n个变换级数$F_i$<br>$$<br>F_m=\sum_{k=0}^{n-1}x_k\cdot cos[\frac{\pi}{2}m(k+\frac{1}{2})] \quad m=0,1,2,…,n-1<br>$$<br>​	此时原始数据Xi可以通过离散余弦变换变化的逆变换（IDCT)表达出来<br>$$<br>x_m=\frac{F_0}{n}+\sum_{k=1}^{n-1}\left[\frac{2F_k}{n}cos\left[\frac{\pi}{n}(m+\frac{1}{2}k)\right]\right]<br>$$<br>​	</p>
+<p>​	 当我们要处理的不再是函数，而是一堆离散的数据时，并且这些数据是对称的话，那么傅里叶变化出来的函数只含有余弦项，这种变换称为离散余弦变换。举个例子，有一组一维数据$[x_0,x_1,x_2,…,x_{n-1}]$,那么可以通过DCT变换得到n个变换级数$F_i$<br>$$<br>F_m=\sum_{k=0}^{n-1}x_k\cdot \mathrm{cos}[\frac{\pi}{2}m(k+\frac{1}{2})] \quad m=0,1,2,…,n-1<br>$$<br>​	此时原始数据Xi可以通过离散余弦变换变化的逆变换（IDCT)表达出来<br>$$<br>x_m=\frac{F_0}{n}+\sum_{k=1}^{n-1}\left[\frac{2F_k}{n}\mathrm{cos}\left[\frac{\pi}{n}(m+\frac{1}{2}k)\right]\right]<br>$$<br>​	也就是说，经过DCT变换，可以把一个数组分解成数个数组的和，如果我们数组视为一个一维矩阵，那么可以把结果看做是一系列矩阵的和<br>$$<br>\left [ \begin{matrix}x_0\x_1\x_2\…\x_n\end{matrix} \right ] =<br>\frac{F_0}{n}<br>    \left [ \begin{matrix}1\1\1\…\1\end{matrix} \right ] +<br>\frac{2F_1}{n}<br>    \left [ \begin{matrix}cos\frac{\pi}{2n}\cos\frac{\pi}{2n}\cos\frac{\pi}{2n}\…\cos\frac{(2n-1)\pi}{2n}\end{matrix} \right ] +<br>\frac{2F_2}{n}<br>    \left [ \begin{matrix}cos\frac{2\pi}{2n}\cos\frac{6\pi}{2n}\cos\frac{10\pi}{2n}\…\cos\frac{(4n-2)\pi}{2n}\end{matrix} 	\right ]+<br>\frac{2F_3}{n}<br>    \left [ \begin{matrix}cos\frac{3\pi}{2n}\cos\frac{9\pi}{2n}\cos\frac{15\pi}{2n}\…\cos\frac{(6n-3)\pi}{2n}\end{matrix} 	\right ]+…+<br>\frac{2F_{n-1}}{n}<br>    \left [ \begin{matrix}cos\frac{(n-1)\pi}{2n}\cos\frac{2(n-1)\pi}{2n}\cos\frac{3(n-1)\pi}{2n}\…\cos\frac{(2n-1)(n-1)\pi}{2n}\end{matrix} 	\right ]<br>$$<br>​	举个例子，我们有一个长度为8的数字，内容为50,55,67,80,-10,-5,20,30，经过DCT转换，得到8个级数为287.0,106.3,14.2,-110.8,9.2,65.7,-8.2,-43.9，根据公式2.3把这个数组转换为8个新的数组的和，如果我们使用图像来表达的话，就可以发现DCT转换的有趣之处了</p>
+<p><img src="/JPEG%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/image-20231120134324070.png" alt="image-20231120134324070"></p>
+<p>​	奥妙之处在于，经过DCT，数据中隐藏的规律被发掘了出来,杂乱的数据被转换成几个工整变化的数据。DCT转换后的数组中第一个是一个直线数据，因此又被称为“直流数据”，简称DC，后面的数据被称为“交流数据”，简称AC，这个称呼起源于信号分析中的术语。</p>
+<p>​	在JPEG压缩过程中，经过颜色空间的转换，每一个8X8的图像块，在数据上表现为3个8X8的矩阵，紧接着我们对这三个矩阵做一个二维的DCT转换，二维的DCT转换公式为:<br>$$<br>F(u,v)=\alpha(u)*\alpha(v)*\sum_{x=0}^{7}\sum_{y=0}^{7}f(x,y)\mathrm{cos}(\frac{2x+1}{16}u\pi)\mathrm{cos}(\frac{2y+1}{16}v\pi) \quad u,v=0,1,2,…,7<br>$$</p>
+<p>$$<br>\alpha(u)=\begin{cases} \frac{1}{\sqrt{8}} \quad \mathrm{when} \quad u=0\ \frac{1}{2} \quad \mathrm{when}\quad u\neq0 \end{cases}<br>$$</p>
+<p>​	DCT的威力究竟有多大，我们可以做一个实际的测试，比如一个所有数值都一样的矩阵，经过DCT转换后，将所有级数组合成一个新的矩阵:</p>
+<p><img src="/JPEG%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/jpeg_35.gif" alt="img"></p>
+<p>​	可以看到，经过DCT转换，矩阵的“能量”被全部集中在左上角上的直流分量F(0,0）上，其他位置都变成了0。</p>
+<p>​	在实际的JPEG压缩过程中，由于图像本身的连贯性，一个8X8的图像中的数值一般不会出现大的跳跃，经过DCT转换会有类似的效果，左上角的直流分量保存了一个大的数值，其他分量都接近于0，我们以Lenna左上角第一块图像的Y分量为例，经过变换的矩阵为:</p>
+<p><img src="/JPEG%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/jpeg_36.gif" alt="img"></p>
+<p>​	可以看到，数据经过DCT变化后，被明显分成了直流分量和交流分量两部分，为后面的进一步压缩起到了充分的铺垫作用，可以说是整个JPEG中最重要的一步，后面我们会介绍数据量化。</p>
+<h4 id="步骤四：数据量化"><a href="#步骤四：数据量化" class="headerlink" title="步骤四：数据量化"></a><strong>步骤四：数据量化</strong></h4><p>​	经过上一节介绍的离散余弦变换，图像数据虽然已经面目全非，但仍然是处于“可逆”的状态，也就是说我们还没有进入“有损”的那一步。这次我们来玩真的，看一下数据中的细节是如何被滤去的。先来考察一下要对付的问题是什么，经过颜色空间转换和离散余弦变换，每一个8X8的图像块都变成了三个8X8的浮点数矩阵，分别表示Y,Cr,Cb数据，比如以其中某个亮度数据矩阵举例，它的数据如下:</p>
+<p><img src="/JPEG%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/jpeg_030.gif" alt="img"></p>
+<p>​	我们的问题是，在可以损失一部分精度的情况下，如何用更少的空间存储这些浮点数？答案是使用量子化（<a href="http://en.wikipedia.org/wiki/Quantization_(image_processing)">Quantization</a>），简称量化。“量子”这个概念来自于物理学，意思是说连续的能量可以看做是一个个单元体的组合，看起来高端大气，其实很简单，比如游戏中在处理角色面朝方向时，一般并不是使用0到2π这样的浮点数，而是把方向分成16个区间，用0到16这样的整数来表示，这样只用4个bit就足够了。JPEG提供的量子化算法如下：<br>$$<br>B_{i,j}=\mathrm{round}(\frac{G_{i,j}}{Q_{i,j}}) \quad i,j=0,1,2,\cdots,7<br>$$<br>​	其中G是我们需要处理的图像矩阵，Q称作量化系数矩阵（Quantization matrices），JPEG算法提供了两张标准的量化系数矩阵，分别用于处理亮度数据Y和色差数据Cr以及Cb。</p>
+<figure>
+<center>
+<img src="JPEG原理详解/jpeg_032.gif" width="300/">
+<img src="JPEG原理详解/jpeg_033.gif" width="300/">
+</center>
+</figure>
+
+<p>​	其中round函数是取整函数，但考虑到了四舍五入，也就是说:</p>
 ]]></content>
       <tags>
         <tag>学习</tag>
