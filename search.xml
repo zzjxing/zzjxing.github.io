@@ -187,7 +187,7 @@ PTS：1 2 3 4 5 6 7<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <p><img src="/JPEG%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/jpeg_034.gif" alt="img"></p>
 <pre><code> 可以看到，一大部分数据变成了0，这非常有利于后面的压缩存储。这两张神奇的量化表也是有讲究的，还记得我们在第一节中所讲的有损压缩的基本原理吗，有损压缩就是把数据中重要的数据和不重要的数据分开，然后分别处理。DCT系数矩阵中的不同位置的值代表了图像数据中不同频率的分量，这两张表中的数据时人们根据人眼对不不同频率的敏感程度的差别所积累下的经验制定的，一般来说人眼对于低频的分量必高频分量更加敏感，所以两张量化系数矩阵左上角的数值明显小于右下角区域。在实际的压缩过程中，还可以根据需要在这些系数的基础上再乘以一个系数，以使更多或更少的数据变成0，我们平时使用的图像处理软件在生成jpg文件时，在控制压缩质量的时候，就是控制的这个系数。
 </code></pre>
-<p>​	在进入下一节之前，矩阵的量化还有最后一步要做，就是把量化后的二维矩阵转变成一个一维数组，以方便后面的霍夫曼压缩，但在做这个顺序转换时，需要按照一个特定的取值顺序。</p>
+<p>在进入下一节之前，矩阵的量化还有最后一步要做，就是把量化后的二维矩阵转变成一个一维数组，以方便后面的霍夫曼压缩，但在做这个顺序转换时，需要按照一个特定的取值顺序。</p>
 <p><img src="/2023/11/08/jpeg-yuan-li-xiang-jie/jpeg_036.gif" alt="img"></p>
 <p>​	这么做的目的只有一个，就是尽可能把0放在一起，由于0大部分集中在右下角，所以才去这种由左上角到右下角的顺序，经过这种顺序变换，最终矩阵变成一个整数数组.</p>
 <blockquote>
@@ -223,16 +223,16 @@ PTS：1 2 3 4 5 6 7<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <p>​	如果我们用我们常见的定长编码，每个字符都是3个bit：</p>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mytable" style="table-layout: fixed">
     <tbody><tr>
-        <td bgcolor="#2F4F4F" align="center">字符
-        </td><td align="center">A</td> 
+        <td bgcolor="#2F4F4F" align="center"><font color="black">字符
+        </font></td><td align="center">A</td> 
         <td align="center">B</td> 
         <td align="center">C</td> 
         <td align="center">D</td> 
         <td align="center">E</td> 
    </tr>
     <tr>
-          <td bgcolor="#2F4F4F" align="center">次数
-        </td><td align="center">001</td> 
+          <td bgcolor="#2F4F4F" align="center"><font color="black">次数
+        </font></td><td align="center">001</td> 
         <td align="center">010</td> 
         <td align="center">011</td> 
         <td align="center">100</td> 
@@ -243,16 +243,16 @@ PTS：1 2 3 4 5 6 7<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <p>​	 那么这段文字共需要3*33 = 99个bit来保存，但如果我们根据字符出现的概率，使用如下的编码：</p>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mytable" style="table-layout: fixed">
     <tbody><tr>
-        <td bgcolor="#2F4F4F" align="center">字符
-        </td><td align="center">A</td> 
+        <td bgcolor="#2F4F4F" align="center"><font color="black">字符
+        </font></td><td align="center">A</td> 
         <td align="center">B</td> 
         <td align="center">C</td> 
         <td align="center">D</td> 
         <td align="center">E</td> 
    </tr>
     <tr>
-          <td bgcolor="#2F4F4F" align="center">次数
-        </td><td align="center">110</td> 
+          <td bgcolor="#2F4F4F" align="center"><font color="black">次数
+        </font></td><td align="center">110</td> 
         <td align="center">0</td> 
         <td align="center">1110</td> 
         <td align="center">10</td> 
