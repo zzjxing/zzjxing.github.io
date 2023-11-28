@@ -191,8 +191,7 @@ PTS：1 2 3 4 5 6 7<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <blockquote>
 <p>AABCBABBCDBBDDBAABDBBDABBBBDDEDBD</p>
 </blockquote>
-<pre><code> 这段数据里面包含了33个字符，每种字符出现的次数统计如下:
-</code></pre>
+<p>​	这段数据里面包含了33个字符，每种字符出现的次数统计如下:</p>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mytable" style="table-layout: fixed">
     <tbody><tr>
         <td bgcolor="#2F4F4F" align="center"><font color="black">字符
@@ -262,8 +261,7 @@ PTS：1 2 3 4 5 6 7<span aria-hidden="true" class="line-numbers-rows"><span></sp
    </tr>
 </tbody></table>
 
-<pre><code> 在实际的压缩过程中，数据中的0出现的概率非常高，所以首先要做的事情，是对其中的0进行处理，把数据中的非零的数据，以及数据前面0的个数作为一个处理单元。
-</code></pre>
+<p>​	在实际的压缩过程中，数据中的0出现的概率非常高，所以首先要做的事情，是对其中的0进行处理，把数据中的非零的数据，以及数据前面0的个数作为一个处理单元。</p>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mytable" style="table-layout: fixed">
     <tbody><tr>
         <td bgcolor="#2F4F4F" align="center" style="width: 190px;"><font color="black">原始数据</font></td>
@@ -319,7 +317,7 @@ PTS：1 2 3 4 5 6 7<span aria-hidden="true" class="line-numbers-rows"><span></sp
    </tr>
 </tbody></table>
 
-<p> 其中（15,0）表示16个0，接下来我们要处理的是括号里右面的数字，这个数字的取值范围在-2047~2047之间，JPEG提供了一张标准的码表用于对这些数字编码：</p>
+<p>​	其中（15,0）表示16个0，接下来我们要处理的是括号里右面的数字，这个数字的取值范围在-2047~2047之间，JPEG提供了一张标准的码表用于对这些数字编码：</p>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mytable" style="table-layout: fixed">
     <tbody><tr>
         <td bgcolor="#2F4F4F" align="center" style="width: 190px;" colspan="2"><font color="black">Value</font></td>
