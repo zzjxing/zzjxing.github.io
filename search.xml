@@ -175,7 +175,7 @@ PTS：1 2 3 4 5 6 7<span aria-hidden="true" class="line-numbers-rows"><span></sp
 </center>
 </figure>
 
-<p>​	其中round函数是取整函数，但考虑到了四舍五入，也就是说:<br>$$<br>\mathrm{round(r)}=\begin{cases}\cdots\<br>                            2\quad \mathrm{when} \quad  1.5\leq r &lt; 2.5 \\<br>                            1\quad \mathrm{when} \quad  0.5\leq r &lt; 1.5\\<br>                            0\quad \mathrm{when} \quad  -0.5\leq r &lt; 0.5\\<br>                            -1\quad \mathrm{when} \quad  -1.5\leq r &lt; -0.5\\<br>                            -2\quad \mathrm{when} \quad  -2.5\leq r &lt; -1.5\\<br>                            \cdots \<br>                            \end{cases}<br>$$</p>
+<p>​	其中round函数是取整函数，但考虑到了四舍五入，也就是说:<br>$$<br>\mathrm{round(r)}=\begin{cases}\cdots\\<br>                            2\quad \mathrm{when} \quad  1.5\leq r &lt; 2.5 \\<br>                            1\quad \mathrm{when} \quad  0.5\leq r &lt; 1.5\\<br>                            0\quad \mathrm{when} \quad  -0.5\leq r &lt; 0.5\\<br>                            -1\quad \mathrm{when} \quad  -1.5\leq r &lt; -0.5\\<br>                            -2\quad \mathrm{when} \quad  -2.5\leq r &lt; -1.5\\<br>                            \cdots \<br>                            \end{cases}<br>$$</p>
 <p>​	 比如上面数据，以左上角的-415.38为例，对应的量子化系数是16，那么round(-415.38/16)=round(-25.96125)=-26。最终得到的量子化后的结果为:</p>
 <p><img src="/2023/11/08/jpeg-yuan-li-xiang-jie/jpeg_034.gif" alt="img"></p>
 <p>​	可以看到，一大部分数据变成了0，这非常有利于后面的压缩存储。这两张神奇的量化表也是有讲究的，还记得我们在第一节中所讲的有损压缩的基本原理吗，有损压缩就是把数据中重要的数据和不重要的数据分开，然后分别处理。DCT系数矩阵中的不同位置的值代表了图像数据中不同频率的分量，这两张表中的数据时人们根据人眼对不不同频率的敏感程度的差别所积累下的经验制定的，一般来说人眼对于低频的分量必高频分量更加敏感，所以两张量化系数矩阵左上角的数值明显小于右下角区域。在实际的压缩过程中，还可以根据需要在这些系数的基础上再乘以一个系数，以使更多或更少的数据变成0，我们平时使用的图像处理软件在生成jpg文件时，在控制压缩质量的时候，就是控制的这个系数。</p>
